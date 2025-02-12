@@ -1,0 +1,15 @@
+resource_id,resource_category,title,summary,url,date_updated,creator
+1,Health,Medicaid,"Provides health insurance for low-income adults and children, expanded under the ACA in Ohio.",google.com,2025-02-12,7
+2,Health,Medicare,Federal health insurance program primarily for people aged 65 and older or with certain disabilities.,google.com,2025-02-12,7
+3,Health,CHIP,Offers health insurance to uninsured children in families with income up to 206% of the FPL.,google.com,2025-02-12,7
+4,Food,SNAP,Provides monthly funds via EBT cards to help families purchase groceries.,google.com,2025-02-12,7
+5,MISC.,TANF,Offers financial assistance and support services to low-income families with children.,google.com,2025-02-12,7
+6,Housing,PIPP,Reduces utility bills to 5% of household income for eligible low-income families.,google.com,2025-02-12,7
+7,Health,Health Impact Ohio,Provides public health services and advocates for health equity across Ohio communities.,google.com,2025-02-12,7
+8,Childcare,Action for Children,"Offers childcare referrals, parenting classes, and family resources in central Ohio.",google.com,2025-02-12,7
+9,Childcare,Fugees,Supports refugee children with educational and extracurricular programs.,google.com,2025-02-12,7
+10,Food,Ohio Association of Food Banks,Coordinates statewide food assistance programs and hunger relief initiatives.,google.com,2025-02-12,7
+11,Housing,The H.E.L.P. Center,Provides housing assistance and support services for families in need,google.com,2025-02-12,7
+12,Food,Food Not Bombs,"Distributes free, no-questions-asked meals every Saturday at various Columbus locations.",google.com,2025-02-12,7
+13,MISC.,Mid-Ohio Workers,"Advocates for low-income workers through legal clinics, healthcare, and food drives.",google.com,2025-02-12,7
+14,Legal Counsel,Legal Aid Society of Central Ohio,"Offers legal aid, including for evictions, to those at or below 125% of the FPL",google.com,2025-02-12,7

@@ -1,0 +1,8 @@
+node_id,is_leaf,display_type,question,node_language
+1,0,Video,"Have you been evicted yet?",English
+2,0,Text,Has an eviction notice been posted on you door?,English
+3,0,Text,Do you have dependents?,English
+4,1,Text,,English
+5,1,Text,,English
+6,1,Text,,English
+7,1,Text,,English

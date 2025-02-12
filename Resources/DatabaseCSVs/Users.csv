@@ -1,0 +1,9 @@
+user_id,fname,lname,user_type,email,address,hashed_password
+1,Nick,Varga,admin,Varga.95@buckeyemail.osu.edu,,dfc36f0565b8a07ab57adf416c43d606cd5ed184f27f87d9e0d71242
+2,Aerin,Krebs,admin,Krebs.178@osu.edu ,,a2f26991d9418bf2b4277171ed4e8244bb6cb71a64e6ec084dd0cc99
+3,Mia,Cline,admin,Cline.675@osu.edu ,,8623564898247e4abb80a8ea299c040177e55165e62cf9576efecbb4
+4,Phil,Onufriychuk,admin,Onufriychuk.1@osu.edu ,,e1f6faf3fe74c80e250d7a2ef530b4b6807b073ee4bf18cf63b26811
+5,Natalie,Chmura,admin,Chmura.18@osu.edu ,,6f9bcc307edb06fee66bf7101fb50dc7749ce04670f3d0c8c9d10320
+6,Christal,Khy,admin,Khy.3@buckeyemail.osu.edu ,,4a2e55fda50055a3557277030c36fcd059a8ead74c63f841c6db8985
+7,Izzy,McCale,admin,McCale27@gmail.com ,,148f3731091e1d0cd012c3ad8d0b2dfd0bc3fa4fa76026ba815fd88e
+8,Test,User,user,test.user@example.com,"1234 N High St, Columbus, Ohio",27ac607194aae07ce7e98ef01f74293d60159740aadaac98334725de
