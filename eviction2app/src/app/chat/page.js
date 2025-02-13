@@ -17,9 +17,10 @@ export default function Chat() {
             <button style={styles.button} onClick={openMessenger}>
                 Open Messenger
             </button>
-            <Link href="/">
-                <a style={styles.backLink}>Back to Home</a>
+            <Link href="/" style={styles.backLink}>
+                Back to Home
             </Link>
+
         </div>
     );
 }

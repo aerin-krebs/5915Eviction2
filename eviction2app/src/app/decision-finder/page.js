@@ -28,9 +28,10 @@ export default function DecisionFinder() {
             {decision === 'no' && (
                 <p style={styles.result}>You chose NO. [Display relevant guidance here.]</p>
             )}
-            <Link href="/">
-                <a style={styles.backLink}>Back to Home</a>
+            <Link href="/" style={styles.backLink}>
+                Back to Home
             </Link>
+
         </div>
     );
 }

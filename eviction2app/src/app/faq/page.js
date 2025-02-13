@@ -24,9 +24,10 @@ export default function FAQ() {
                     </li>
                 ))}
             </ul>
-            <Link href="/">
-                <a style={styles.backLink}>Back to Home</a>
+            <Link href="/" style={styles.backLink}>
+                Back to Home
             </Link>
+
         </div>
     );
 }
