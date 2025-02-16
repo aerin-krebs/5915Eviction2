@@ -4,6 +4,7 @@ JusticeTech capstone project repository.
 Technical [README](./docs/TechDetailsHome.md) and external documentation
 
 ## Flow Chart
+
 flowchart TD
     A[Start] --> B(Landing page)
     B --> D{Do you have an eviction notice?}
@@ -13,9 +14,8 @@ flowchart TD
     D --> yes --> C(Decision Tree)
     D --> no --> L(Learning page)
     L --> G
-
-
-    J[decision tree] --> K{Do you have a 3 or 30 day notice?}
+    
+J[decision tree] --> K{Do you have a 3 or 30 day notice?}
     K --> M(30 day) 
     K --> N(3 day) 
     M --> O{Subsidised housing?} --> yes30day --> legal-aid-society
