@@ -10,6 +10,15 @@
 !.yarn/releases
 !.yarn/versions
 
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+
 # testing
 /coverage
 
@@ -39,3 +48,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: if you’re using TypeScript
+*.tsbuildinfo
+
+# Optional: if you’re using certain IDEs
+.vscode/
+.idea/
+*.sw?
+
+# Optional: if using coverage tools (e.g., Jest)
+coverage
