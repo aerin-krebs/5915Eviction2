@@ -26,3 +26,6 @@ J[decision tree] --> K{Do you have a 3 or 30 day notice?}
     S --> noMediation --> court-specific-info --> rental-assistance-resources
     S --> yesMediation --> U(Congrats, but...)
     noMediation --> chat-bot
+
+    <img width="592" alt="image" src="https://github.com/user-attachments/assets/0dc8bbae-ee37-4621-87c2-8015a0f1299d" />
+
