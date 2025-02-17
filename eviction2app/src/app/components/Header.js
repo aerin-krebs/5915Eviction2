@@ -19,20 +19,20 @@ export default function Header() {
         </button>
       </div>
       <div className={styles.navLinks}>
-        <Link href="/" underline="hover" className={styles.navLink}>Home</Link>
-        <Link href="/resource-finder" underline="hover" className={styles.navLink}>Resources</Link>
-        <Link href="/decision-finder" underline="hover" className={styles.navLink}>Find A Solution</Link>
-        <Link href="/faq" underline="hover" className={styles.navLink}>FAQs</Link>
+        <Link href="/" underline="hover" color=" #1d3747" className={styles.navLink}>Home</Link>
+        <Link href="/resource-finder" underline="hover" color=" #1d3747" className={styles.navLink}>Resources</Link>
+        <Link href="/decision-finder" underline="hover" color=" #1d3747" className={styles.navLink}>Find A Solution</Link>
+        <Link href="/faq" underline="hover" color=" #1d3747" className={styles.navLink}>FAQs</Link>
       </div>
       {menuOpen && (
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className={styles.mobileMenu}>
-          <Link href="/" className={styles.mobileMenuLink}>Home</Link>
-          <Link href="/resource-finder" className={styles.mobileMenuLink}>Resources</Link>
-          <Link href="/decision-finder" className={styles.mobileMenuLink}>Find A Solution</Link>
-          <Link href="/faq" className={styles.mobileMenuLink}>FAQs</Link>
+          <Link href="/" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>Home</Link>
+          <Link href="/resource-finder" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>Resources</Link>
+          <Link href="/decision-finder" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>Find A Solution</Link>
+          <Link href="/faq" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>FAQs</Link>
         </motion.div>
       )}
     </header>
