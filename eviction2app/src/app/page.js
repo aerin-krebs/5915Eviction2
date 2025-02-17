@@ -28,13 +28,16 @@ export default function Home() {
       {/* Buttons / Navigation */}
       <div style={styles.buttonContainer}>
         <Link href="/resource-finder" style={styles.button}>
-          Find a Solution
+          Resources page
         </Link>
         <Link href="/faq" style={styles.button}>
           FAQs
         </Link>
         <Link href="/chat" style={styles.button}>
           Chat Now
+        </Link>
+        <Link href="/decision-finder" style={styles.button}>
+          Let us link you
         </Link>
 
       </div>
