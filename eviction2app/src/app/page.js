@@ -36,9 +36,7 @@ export default function Home() {
         <Link href="/chat" style={styles.button}>
           Chat Now
         </Link>
-        <Link href="/decision-finder" style={styles.button}>
-          Let us link you
-        </Link>
+
 
       </div>
     </div>
