@@ -1,0 +1,80 @@
+/* General Chat Page Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #d9e8f5;
+    /* Light blue background */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #12263a;
+    /* Dark navy */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* Text */
+.text {
+    font-size: 18px;
+    color: #12263a;
+    margin-bottom: 20px;
+}
+
+/* Chat Button */
+.button {
+    background-color: #fca311;
+    /* Orange */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e08e00;
+}
+
+/* Back Link */
+.backLink {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fca311;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Mobile-Friendly */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}

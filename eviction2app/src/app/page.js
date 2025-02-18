@@ -16,7 +16,7 @@ export default function Home() {
           component={Link}
           href="/decision-finder"
           variant="contained"
-          sx={{ backgroundColor: '#ffc844', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+          sx={{ backgroundColor: '#fca311;', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
         >
           Find A Solution
         </Button>
@@ -27,7 +27,7 @@ export default function Home() {
           component={Link}
           href="/chat"
           variant="contained"
-          sx={{ backgroundColor: '#ffc844', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+          sx={{ backgroundColor: '#fca311;', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
         >
           Chat Now
         </Button>
@@ -38,7 +38,7 @@ export default function Home() {
           component={Link}
           href="/faq"
           variant="contained"
-          sx={{ backgroundColor: '#ffc844', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+          sx={{ backgroundColor: ' #fca311;', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
         >
           FAQs
         </Button>
@@ -49,11 +49,13 @@ export default function Home() {
           component={Link}
           href="/resource-finder"
           variant="contained"
-          sx={{ backgroundColor: '#ffc844', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+          sx={{
+            backgroundColor: '#fca311; ', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem'
+          }}
         >
           Resources
         </Button>
       </div>
-    </div>
+    </div >
   );
 }

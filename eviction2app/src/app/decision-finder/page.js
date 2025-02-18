@@ -100,7 +100,7 @@ export default function DecisionFinder() {
                         Court Information
                     </Link>
                     <p className={styles.question}>Need assistance? Try our chatbot.</p>
-                    <Link href="/chat-bot" className={styles.link}>
+                    <Link href="/chat" className={styles.link}>
                         Open Chatbot
                     </Link>
                 </>
