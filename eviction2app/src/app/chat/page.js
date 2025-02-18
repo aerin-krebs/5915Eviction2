@@ -5,7 +5,7 @@ import styles from './Chat.module.css';
 
 export default function Chat() {
     const openMessenger = () => {
-        window.open('https://m.me/your-page-name', '_blank');
+        window.open('https://www.messenger.com/t/1867045913328638/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0', '_blank');
     };
 
     return (
