@@ -2,65 +2,113 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import styles from './DecisionFinder.module.css'; // Import CSS file
 
 export default function DecisionFinder() {
-    const [decision, setDecision] = useState(null);
-    // Example resources
-    const handleDecision = (choice) => {
-        setDecision(choice);
+    const [step, setStep] = useState('start');
+
+    const handleChoice = (nextStep) => {
+        setStep(nextStep);
     };
 
     return (
-        <div style={styles.container}>
-            <h1>Decision Finder</h1>
-            {!decision && (
+        <div className={styles.container}>
+            <h1 className={styles.title}>Decision Finder</h1>
+
+            {step === 'start' && (
                 <>
-                    <p>Are you sure you want to proceed?</p>
-                    <button style={styles.button} onClick={() => handleDecision('yes')}>
+                    <p className={styles.question}>Do you have a 3 or 30 day notice?</p>
+                    <button className={styles.button} onClick={() => handleChoice('30day')}>
+                        30 Day Notice
+                    </button>
+                    <button className={styles.button} onClick={() => handleChoice('3day')}>
+                        3 Day Notice
+                    </button>
+                </>
+            )}
+
+            {step === '30day' && (
+                <>
+                    <p className={styles.question}>Is your housing subsidized?</p>
+                    <button className={styles.button} onClick={() => handleChoice('yes30day')}>
                         Yes
                     </button>
-                    <button style={styles.button} onClick={() => handleDecision('no')}>
+                    <button className={styles.button} onClick={() => handleChoice('no30day')}>
                         No
                     </button>
                 </>
             )}
-            {decision === 'yes' && (
-                <p style={styles.result}>You chose YES. [Display relevant guidance here.]</p>
+
+            {step === '3day' && (
+                <>
+                    <p className={styles.question}>Is your housing subsidized?</p>
+                    <button className={styles.button} onClick={() => handleChoice('yes3day')}>
+                        Yes
+                    </button>
+                    <button className={styles.button} onClick={() => handleChoice('no3day')}>
+                        No
+                    </button>
+                </>
             )}
-            {decision === 'no' && (
-                <p style={styles.result}>You chose NO. [Display relevant guidance here.]</p>
+
+            {step === 'yes30day' && (
+                <>
+                    <p className={styles.result}>📌 You should contact the Legal Aid Society.</p>
+                    <Link href="/legal-aid-society" className={styles.link}>
+                        Get Legal Assistance
+                    </Link>
+                </>
             )}
-            <Link href="/" style={styles.backLink}>
+
+            {step === 'no30day' && (
+                <>
+                    <p className={styles.result}>⚠️ More information needed. Please check local policies.</p>
+                </>
+            )}
+
+            {step === 'yes3day' && (
+                <>
+                    <p className={styles.result}>⚠️ Your notice may contain incorrect statements.</p>
+                    <Link href="/notice-incorrect-statement" className={styles.link}>
+                        Learn More
+                    </Link>
+                </>
+            )}
+
+            {step === 'no3day' && (
+                <>
+                    <p className={styles.question}>Did you successfully mediate?</p>
+                    <button className={styles.button} onClick={() => handleChoice('yesMediation')}>
+                        Yes
+                    </button>
+                    <button className={styles.button} onClick={() => handleChoice('noMediation')}>
+                        No
+                    </button>
+                </>
+            )}
+
+            {step === 'yesMediation' && (
+                <>
+                    <p className={styles.result}>🎉 Congrats, but additional resources may be available.</p>
+                </>
+            )}
+
+            {step === 'noMediation' && (
+                <>
+                    <p className={styles.question}>Check court-specific information.</p>
+                    <Link href="/court-specific-info" className={styles.link}>
+                        Court Information
+                    </Link>
+                    <p className={styles.question}>Need assistance? Try our chatbot.</p>
+                    <Link href="/chat-bot" className={styles.link}>
+                        Open Chatbot
+                    </Link>
+                </>
+            )}
+
+            <Link href="/" className={styles.backLink}>
                 Back to Home
             </Link>
-
-        </div >
+        </div>
     );
 }
-
-const styles = {
-    container: {
-        padding: '1rem',
-        maxWidth: '600px',
-        margin: '0 auto',
-        textAlign: 'center',
-    },
-    button: {
-        backgroundColor: '#0070f3',
-        color: '#fff',
-        margin: '0.5rem',
-        padding: '0.75rem 1rem',
-        borderRadius: '4px',
-        border: 'none',
-    },
-    result: {
-        margin: '1rem 0',
-        fontWeight: 'bold',
-    },
-    backLink: {
-        display: 'block',
-        marginTop: '1rem',
-        color: '#0070f3',
-        textDecoration: 'none',
-    },
-}; 

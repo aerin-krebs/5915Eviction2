@@ -1,0 +1,82 @@
+/* General Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centers content vertically */
+    align-items: center;
+    /* Centers content horizontally */
+    min-height: 100vh;
+    /* Ensures full-page height */
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #d9e8f5;
+    /* Light blue background */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #12263a;
+    /* Dark navy */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* Questions */
+.question {
+    font-size: 20px;
+    color: #12263a;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Result Text */
+.result {
+    font-size: 18px;
+    color: #12263a;
+    font-weight: bold;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.button {
+    background-color: #fca311;
+    /* Orange */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e08e00;
+}
+
+/* Links */
+.link {
+    background-color: #14213d;
+    /* Dark navy */
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
