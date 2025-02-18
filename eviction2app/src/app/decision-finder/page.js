@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export default function DecisionFinder() {
     const [decision, setDecision] = useState(null);
-
+    // Example resources
     const handleDecision = (choice) => {
         setDecision(choice);
     };
@@ -34,7 +34,7 @@ export default function DecisionFinder() {
                 Back to Home
             </Link>
 
-        </div>
+        </div >
     );
 }
 
@@ -63,4 +63,4 @@ const styles = {
         color: '#0070f3',
         textDecoration: 'none',
     },
-};
+}; 
