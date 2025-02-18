@@ -1,56 +1,88 @@
 "use client";
 
-import Link from 'next/link';
+import Header from '../components/Header.js';
+import styles from './FAQ.module.css';
+import React, { useState, useEffect } from 'react';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Paper,
+    IconButton,
+    Collapse,
+} from '@mui/material';
+import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
+import faqsData from './faq.json';
 
-export default function FAQ() {
-    const faqs = [
-        {
-            question: 'What is eviction?',
-            answer: 'Eviction is the process of legally removing a tenant from a property.',
-        },
-        {
-            question: 'Where can I find legal help?',
-            answer: 'Local legal aid organizations often provide free or low-cost assistance.',
-        },
-        // Add more FAQs as needed
-    ];
 
+const CollapsibleRow = ({ faq }) => {
+    const [open, setOpen] = useState(false);
+  
     return (
-        <div style={styles.container}>
-            <h1>FAQs</h1>
-            <ul style={styles.list}>
-                {faqs.map((faq, index) => (
-                    <li key={index} style={styles.listItem}>
-                        <strong>{faq.question}</strong>
-                        <p>{faq.answer}</p>
-                    </li>
-                ))}
-            </ul>
-            <Link href="/" style={styles.backLink}>
-                Back to Home
-            </Link>
+      <>
+        <TableRow className={styles.tableRow}>
+          <TableCell className={styles.tableCell}>
+            <IconButton size="small" onClick={() => setOpen(!open)}>
+              {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
+            </IconButton>
+          </TableCell>
+          <TableCell onClick={() => setOpen(!open)}>{faq.question}</TableCell>
+        </TableRow>
+        <TableRow className={styles.tableRow}>
+          <TableCell style={{ padding: 0 }} colSpan={2}>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <Table size="small">
+                <TableBody>
+                  <TableRow>
+                    <TableCell colSpan={2} style={{ padding: '10px'}}>
+                      {faq.answer}
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </Collapse>
+          </TableCell>
+        </TableRow>
+      </>
+    );
+  };
+  
 
+const CollapsibleTable = () => {
+    const [faqs, setFaqs] = useState([]);
+  
+    useEffect(() => {
+      setFaqs(faqsData);
+    }, []);
+  
+    return (
+      <TableContainer>
+        <Table>
+          <TableBody>
+            {faqs.map((faq, index) => (
+              <CollapsibleRow key={index} faq={faq} />
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    );
+  };
+
+function FAQ() {
+    return (
+        <div className={styles.container}>
+            <Header />
+            <div className={styles.contentBox}>
+            <p className={styles.title}>Frequently Asked Questions</p>
+                <TableContainer component={Paper} elevation={8}>
+                    <CollapsibleTable/>
+                </TableContainer>
+            </div>
         </div>
     );
 }
 
-const styles = {
-    container: {
-        padding: '1rem',
-        maxWidth: '600px',
-        margin: '0 auto',
-    },
-    list: {
-        listStyle: 'none',
-        paddingLeft: 0,
-    },
-    listItem: {
-        marginBottom: '1rem',
-    },
-    backLink: {
-        color: '#0070f3',
-        textDecoration: 'none',
-    },
-};
-
-
+export default FAQ;

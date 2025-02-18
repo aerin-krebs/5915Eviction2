@@ -1,0 +1,32 @@
+.container {
+    min-height: 100vh;
+    background-color: #d4e6f2;
+    font-family: sans-serif;
+}
+  
+.contentBox {
+    max-width: 100vw;
+    min-height: 100vh;
+    margin: .1rem;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid #ff4d00;
+    border-radius: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #d4e6f2;
+
+}
+  
+.title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #1d3747;
+}
+  
+.text {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    color: #1d3747;
+    font-family: Merriweather;
+}
+  

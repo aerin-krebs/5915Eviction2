@@ -1,72 +1,59 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { Button } from '@mui/material';
+import Header from './components/Header';
+import styles from './home/Home.module.css';
 
 export default function Home() {
-  const [selectedOption, setSelectedOption] = useState('');
-
   return (
-    <div style={styles.container}>
-      <h1 style={styles.heading}>Facing Eviction?</h1>
-      <p style={styles.paragraph}>[Insert inspiring call to action here]</p>
-
-      {/* Example drop-down (if needed) */}
-      <div style={{ marginBottom: '1rem' }}>
-        <label htmlFor="dropdown">Select an Option: </label>
-        <select
-          id="dropdown"
-          value={selectedOption}
-          onChange={(e) => setSelectedOption(e.target.value)}
+    <div className={styles.container}>
+      <Header />
+      <div className={styles.contentBox}>
+        <p className={styles.title}>Are You Facing Eviction?</p>
+        <p className={styles.text}>No one should lose their home. Find the help you need today.</p>
+        <Button
+          component={Link}
+          href="/decision-finder"
+          variant="contained"
+          sx={{ backgroundColor: '#ffc844', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
         >
-          <option value="">--Select--</option>
-          <option value="option1">Help Option 1</option>
-          <option value="option2">Help Option 2</option>
-        </select>
-      </div>
+          Find A Solution
+        </Button>
 
-      {/* Buttons / Navigation */}
-      <div style={styles.buttonContainer}>
-        <Link href="/resource-finder" style={styles.button}>
-          Resources page
-        </Link>
-        <Link href="/faq" style={styles.button}>
-          FAQs
-        </Link>
-        <Link href="/chat" style={styles.button}>
+        <p className={styles.title}>Have legal questions?</p>
+        <p className={styles.text}>Chat with Franklin County Self Help Center. Staff cannot offer legal advice but can assist in finding helpful resources and provide legal information.</p>
+        <Button
+          component={Link}
+          href="/chat"
+          variant="contained"
+          sx={{ backgroundColor: '#ffc844', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+        >
           Chat Now
-        </Link>
+        </Button>
 
+        <p className={styles.title}>View frequently asked questions</p>
+        <p className={styles.text}>Click below to see frequently asked questions by people experiencing eviction.</p>
+        <Button
+          component={Link}
+          href="/faq"
+          variant="contained"
+          sx={{ backgroundColor: '#ffc844', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+        >
+          FAQs
+        </Button>
 
+        <p className={styles.title}>Looking for resources?</p>
+        <p className={styles.text}>Click below to see our list of resources to help you avoid eviction.</p>
+        <Button
+          component={Link}
+          href="/resource-finder"
+          variant="contained"
+          sx={{ backgroundColor: '#ffc844', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+        >
+          Resources
+        </Button>
       </div>
     </div>
   );
 }
-
-const styles = {
-  container: {
-    padding: '1rem',
-    maxWidth: '600px',
-    margin: '0 auto',
-    textAlign: 'center',
-  },
-  heading: {
-    marginBottom: '1rem',
-  },
-  paragraph: {
-    marginBottom: '1rem',
-  },
-  buttonContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-    marginTop: '1rem',
-  },
-  button: {
-    backgroundColor: '#0070f3',
-    color: '#fff',
-    padding: '0.75rem 1rem',
-    textDecoration: 'none',
-    borderRadius: '4px',
-  },
-};
