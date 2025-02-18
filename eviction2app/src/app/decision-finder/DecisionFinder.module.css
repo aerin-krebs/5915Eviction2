@@ -2,7 +2,13 @@
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    /* Centers content vertically */
     align-items: center;
+    /* Centers content horizontally */
+    min-height: 100vh;
+    /* Ensures full-page height */
+    width: 100%;
     padding: 40px 20px;
     background-color: #d9e8f5;
     /* Light blue background */
@@ -34,10 +40,11 @@
     color: #12263a;
     font-weight: bold;
     background-color: white;
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
     margin: 10px 0;
-    max-width: 400px;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Buttons */
@@ -72,33 +79,4 @@
     font-weight: bold;
     transition: background 0.3s ease;
     margin-top: 10px;
-}
-
-.link:hover {
-    background-color: #0d1b2a;
-}
-
-/* Back Link */
-.backLink {
-    margin-top: 20px;
-    text-decoration: none;
-    color: #fca311;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* Mobile-Friendly */
-@media (max-width: 600px) {
-    .title {
-        font-size: 28px;
-    }
-
-    .question {
-        font-size: 18px;
-    }
-
-    .button {
-        font-size: 16px;
-        padding: 10px 15px;
-    }
 }
