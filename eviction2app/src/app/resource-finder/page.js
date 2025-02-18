@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import styles from './ResourceFinder.module.css'; // Import CSS file
 
 export default function ResourceFinder() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -54,7 +53,7 @@ export default function ResourceFinder() {
                 placeholder="Search resources..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={styles.searchInput}
+                style={styles.searchInput}
             />
 
             {/* Filter Dropdown */}
@@ -103,3 +102,28 @@ export default function ResourceFinder() {
         </div>
     );
 }
+
+const styles = {
+    container: {
+        padding: '1rem',
+        maxWidth: '600px',
+        margin: '0 auto',
+    },
+    searchInput: {
+        width: '100%',
+        padding: '0.5rem',
+        marginBottom: '1rem',
+    },
+    list: {
+        listStyleType: 'none',
+        paddingLeft: 0,
+        marginBottom: '1rem',
+    },
+    listItem: {
+        marginBottom: '0.5rem',
+    },
+    backLink: {
+        color: '#0070f3',
+        textDecoration: 'none',
+    },
+};
