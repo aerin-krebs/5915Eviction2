@@ -37,7 +37,7 @@ export default function DecisionFinder() {
         <div className={styles.container}>
             <Header/>
             <div className={styles.contentBox}>
-                <h1 className={styles.title}>Decision Finder</h1>
+                <h1 className={styles.title}>Solution Finder</h1>
                 
                 {step === 'start' && (
                     <>
