@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import Header from '../components/Header';
 import styles from './ResourceFinder.module.css'; // Import CSS file
 
 export default function ResourceFinder() {
@@ -43,6 +44,8 @@ export default function ResourceFinder() {
 
     return (
         <div className={styles.container}>
+            <Header/>
+            <div className={styles.contentBox}>
             <h1 className={styles.title}>Need Help Finding Resources?</h1>
             <p className={styles.subtitle}>
                 No one should struggle alone. Find assistance for housing, food, and legal aid.
@@ -97,9 +100,7 @@ export default function ResourceFinder() {
                 </table>
             </div>
 
-            <Link href="/" className={styles.backLink}>
-                Back to Home
-            </Link>
+        </div>
         </div>
     );
 }
