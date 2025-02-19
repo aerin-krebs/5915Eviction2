@@ -1,14 +1,3 @@
-/* General Styles */
-/* .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #d9e8f5;
-    /* Light blue background */
-    /* font-family: 'Arial', sans-serif;
-} */
-
 .container {
     min-height: 100vh;
     background-color: #d4e6f2;
@@ -28,7 +17,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 /* Header Styling */
