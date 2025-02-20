@@ -17,8 +17,8 @@ public class Date {
     @Override
     public String toString() {
         return String.format(
-            "Date[%d/%d/%d]",
-            month, day, year
+            "Date[%d-%d-%d]",
+            year, month, day
         );
     }
 
