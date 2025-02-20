@@ -1,4 +1,4 @@
-package com.example.evictioneduspring.assist;
+package com.example.evictioneduspring.entities;
 
 public class Date {
 

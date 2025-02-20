@@ -1,12 +1,12 @@
-package com.example.evictioneduspring.assist;
+package com.example.evictioneduspring.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import com.example.evictioneduspring.assist.ResourceCategory;
-import com.example.evictioneduspring.assist.Date;
+import com.example.evictioneduspring.enums.ResourceCategory;
+import com.example.evictioneduspring.enums.Date;
 
 @Entity
 // @Table(name = "resources")

@@ -1,4 +1,4 @@
-package com.example.evictioneduspring.assist;
+package com.example.evictioneduspring.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

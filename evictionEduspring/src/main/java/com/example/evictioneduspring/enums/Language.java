@@ -1,4 +1,4 @@
-package com.example.evictioneduspring.assist;
+package com.example.evictioneduspring.enums;
 
 public enum Language {
     EN,

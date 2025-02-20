@@ -1,12 +1,12 @@
-package com.example.evictioneduspring.assist;
+package com.example.evictioneduspring.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import com.example.evictioneduspring.assist.DisplayType;
-import com.example.evictioneduspring.assist.Language;
+import com.example.evictioneduspring.enums.DisplayType;
+import com.example.evictioneduspring.enums.Language;
 
 @Entity
 // @Table(name = "decision_node")

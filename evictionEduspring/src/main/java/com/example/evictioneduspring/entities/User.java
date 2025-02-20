@@ -1,11 +1,11 @@
-package com.example.evictioneduspring.assist;
+package com.example.evictioneduspring.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import com.example.evictioneduspring.assist.UserType;
+import com.example.evictioneduspring.enums.UserType;
 
 @Entity
 // @Table(name = "users")
