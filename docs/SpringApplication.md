@@ -25,19 +25,47 @@
 
 ## Application Logic
 
+![This will be a diagram of how everything is linking together - will black box the SQL and React app]()
+
 ## Controllers
 
+#### Message Controller
+
+#### Test Controller
+
 ## Entities
+
+#### Date
+
+#### Decision Node
+
+#### Example Table
+
+#### FAQ
+
+#### FAQ Resource
+
+#### Node Resource
+
+#### Question Answer
+
+#### Resource
+
+#### User
 
 ## Enum Sets
 
 #### DisplayType
 
+Specifies the format of the resource provided.
+
 #### Language
+
+Classifies the language of the resource avalible: Currently has English, Chinese, French, Hatitan, Somoli, and Spanish
 
 #### ResourceCategory
 
-
+Classifies the category that the resource is assigned to, used for internal sorting.
 
 #### SQLDatasets
 
@@ -45,6 +73,6 @@ Specifies the SQL Table which the information is coming from, used to validate q
 
 #### UserType
 
-Classifies the language of the resource avalible: Currently has English, Chinese, French, Hatitan, Somoli, and Spanish
+Specififes the type of user that is making queries or edits - each user will have associated permissions.
 
 ## Testing

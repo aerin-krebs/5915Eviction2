@@ -4,12 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import com.example.evictioneduspring.enums.DisplayType;
 import com.example.evictioneduspring.enums.Language;
 
 @Entity
-// @Table(name = "decision_node")
+@Table(name = "Decision_Node")
 public class DecisionNode {
 
     @Id
@@ -32,10 +33,8 @@ public class DecisionNode {
     @Override
     public String toString() {
         return String.format(
-            "DecisionNode[nodeId=%d, isLeaf='%s', displayType='%s',
-            question='%s', language='%s',]",
-            node_id, String.valueOf(is_leaf), display_type.toString(),
-            question, language.toString()
+            "DecisionNode[nodeId=%d, isLeaf='%s', displayType='%s', question='%s', language='%s',]",
+            node_id, String.valueOf(is_leaf), display_type.toString(), question, node_language.toString()
         );
     }
 
