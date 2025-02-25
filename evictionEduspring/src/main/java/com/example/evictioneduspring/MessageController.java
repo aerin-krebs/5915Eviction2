@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RestController
 public class MessageController {
 
+
     @GetMapping("/resource-finder")
     public String getResource() {
         return "Hello, World!";

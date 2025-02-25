@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import com.example.evictioneduspring.enums.UserType;
 
 @Entity
-// @Table(name = "users")
+// @Table(name = "Users")
 public class User {
 
     @Id
@@ -31,10 +31,8 @@ public class User {
     @Override
     public String toString() {
         return String.format(
-            "User[userId=%d, firstName='%s', lastName='%s', userType='%s',
-            email='%s', address='%s', hashPassword='%s']",
-            user_id, first_name, last_name, user_type.toString(), 
-            email, address, hash_password
+            "User[userId=%d, firstName='%s', lastName='%s', userType='%s', email='%s', address='%s', hashPassword='%s']",
+            user_id, first_name, last_name, user_type.toString(), email, address, hash_password
         );
     }
 

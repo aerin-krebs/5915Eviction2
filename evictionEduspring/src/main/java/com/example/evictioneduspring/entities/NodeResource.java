@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-// @Table(name = "node-resource")
+// @Table(name = "Node_Resource")
 public class NodeResource {
 
     @Id

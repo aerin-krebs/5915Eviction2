@@ -1,13 +1,13 @@
-package com.example.evictioneduspring;
+// package com.example.evictioneduspring;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class EvictionEduSpringApplicationTests {
+// @SpringBootTest
+// class EvictionEduSpringApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }

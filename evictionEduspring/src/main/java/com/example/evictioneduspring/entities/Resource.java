@@ -5,11 +5,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.Date;
+
 import com.example.evictioneduspring.enums.ResourceCategory;
-import com.example.evictioneduspring.enums.Date;
 
 @Entity
-// @Table(name = "resources")
+// @Table(name = "Resources")
 public class Resource {
 
     @Id
@@ -20,8 +21,8 @@ public class Resource {
     private String summary;
     private String url;
     private Date date_updated;
-    private long creator;
-
+    private long creator_id;
+// 
     protected Resource() {}
 
     public Resource(long resource_id_p, ResourceCategory resource_category_p, String title_p, String url_p, Date date_updated_p) {
@@ -35,10 +36,8 @@ public class Resource {
     @Override
     public String toString() {
         return String.format(
-            "Resource[resourceId=%d, resourceCategory='%s', title='%s', summary='%s',
-            url='%s', dateUpdated='%s', creatorId=%d]",
-            resource_id, resource_category.toString(), title, summary, 
-            url, date_updated.toString(), creatorId
+            "Resource[resourceId=%d, resourceCategory='%s', title='%s', summary='%s', url='%s', dateUpdated='%s', creatorId=%d]",
+            resource_id, resource_category.toString(), title, summary, url, date_updated.toString(), creator_id
         );
     }
 
@@ -91,11 +90,11 @@ public class Resource {
     }
 
     public long getCreator() {
-        return creator;
+        return creator_id;
     }
 
-    public void setCreator(long new_creator) {
-        this.creator = new_creator;
+    public void setCreator(long new_creator_id) {
+        this.creator_id = new_creator_id;
     }
 
 }

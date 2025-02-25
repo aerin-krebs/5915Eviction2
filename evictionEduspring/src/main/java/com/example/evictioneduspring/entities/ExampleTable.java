@@ -11,20 +11,20 @@ public class ExampleTable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private ... 
+    private String example;
 
     protected ExampleTable() {}
 
-    public ExampleTable() {
-        
+    public ExampleTable(String tmp) {
+        this.example = tmp;
     }
 
     @Override
     public String toString() {
-        return String.format();
+        return String.format("Hello%d", 11);
     }
 
-    public get() {
+    public void get() {
 
     }
 
