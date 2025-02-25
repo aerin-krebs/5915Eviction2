@@ -85,11 +85,11 @@ public class User {
         this.address = new_address;
     }
 
-    public String gethashedPassword() {
+    public String getHashedPassword() {
         return hashed_password;
     }
 
-    public void sethashedPassword(String new_hashed_password) {
+    public void setHashedPassword(String new_hashed_password) {
         this.hashed_password = new_hashed_password;
     }
 

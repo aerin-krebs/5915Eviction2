@@ -10,19 +10,19 @@ import java.util.Date;
 import com.example.evictioneduspring.enums.ResourceCategory;
 
 @Entity
-// @Table(name = "Resources")
+@Table(name = "Resources")
 public class Resource {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long resource_id;
-    private ResourceCategory resource_category;
+    private String resource_category;
     private String title;
     private String summary;
     private String url;
-    private Date date_updated;
-    private long creator_id;
-// 
+    private String date_updated;
+    private long creator;
+
     protected Resource() {}
 
     public Resource(long resource_id_p, ResourceCategory resource_category_p, String title_p, String url_p, Date date_updated_p) {
@@ -37,7 +37,7 @@ public class Resource {
     public String toString() {
         return String.format(
             "Resource[resourceId=%d, resourceCategory='%s', title='%s', summary='%s', url='%s', dateUpdated='%s', creatorId=%d]",
-            resource_id, resource_category.toString(), title, summary, url, date_updated.toString(), creator_id
+            resource_id, resource_category.toString(), title, summary, url, date_updated.toString(), creator
         );
     }
 
@@ -90,11 +90,11 @@ public class Resource {
     }
 
     public long getCreator() {
-        return creator_id;
+        return creator;
     }
 
-    public void setCreator(long new_creator_id) {
-        this.creator_id = new_creator_id;
+    public void setCreator(long new_creator) {
+        this.creator = new_creator;
     }
 
 }

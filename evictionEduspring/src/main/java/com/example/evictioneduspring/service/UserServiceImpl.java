@@ -23,6 +23,32 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User updateUser(User user, Long user_id) {
+        User userDB = userRepository.findById(user_id).get();
+
+        if (Objects.nonNull(user.getFirstName() && !"".equalsIgnoreCase(user.getFirstName()))) {
+            userDB.setFirstName(user.getFirstName());
+        }
+        if (Objects.nonNull(user.getLastName() && !"".equalsIgnoreCase(user.getLastName()))) {
+            userDB.setLastName(user.getLastName());
+        }
+        if (Objects.nonNull(user.getUserType() && !"".equalsIgnoreCase(user.getUserType()))) {
+            userDB.setUserType(user.getUserType());
+        }
+        if (Objects.nonNull(user.getEmail() && !"".equalsIgnoreCase(user.getEmail()))) {
+            userDB.setEmail(user.getEmail());
+        }
+        if (Objects.nonNull(user.getAddress() && !"".equalsIgnoreCase(user.getAddress()))) {
+            userDB.setAddress(user.getAddress());
+        }
+        if (Objects.nonNull(user.getHashedPassword() && !"".equalsIgnoreCase(user.getHashedPassword()))) {
+            userDB.setHashedPassword(user.getHashedPassword());
+        }
+
+        return userRepository.save(userDB);
+    }
+
+    @Override
     public void deleteUserByID(Long user_id) {
         userRepository.deleteById(user_id);
     }

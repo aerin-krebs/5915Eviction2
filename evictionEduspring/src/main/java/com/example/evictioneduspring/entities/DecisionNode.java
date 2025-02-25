@@ -17,9 +17,9 @@ public class DecisionNode {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long node_id;
     private boolean is_leaf;
-    private DisplayType display_type;
+    private String display_type;
     private String question;
-    private Language node_language;
+    private String node_language;
 
     protected DecisionNode() {}
 

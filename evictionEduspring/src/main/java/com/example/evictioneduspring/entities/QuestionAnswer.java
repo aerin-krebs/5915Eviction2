@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-// @Table(name = "Question_Answer")
+@Table(name = "Question_Answer")
 public class QuestionAnswer {
 
     @Id
