@@ -4,26 +4,27 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import com.example.evictioneduspring.enums.UserType;
 
 @Entity
-// @Table(name = "Users")
+@Table(name = "Users")
 public class User {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long user_id;
-    private String first_name;
-    private String last_name;
-    private UserType user_type;
+    private String fname;
+    private String lname;
+    private String user_type;
     private String email;
     private String address;
-    private String hash_password;
+    private String hashed_password;
 
     protected User() {}
 
-    public User(long user_id_p, UserType user_type_p) {
+    public User(long user_id_p, String user_type_p) {
         this.user_id = user_id_p;
         this.user_type = user_type_p;
     }
@@ -31,8 +32,8 @@ public class User {
     @Override
     public String toString() {
         return String.format(
-            "User[userId=%d, firstName='%s', lastName='%s', userType='%s', email='%s', address='%s', hashPassword='%s']",
-            user_id, first_name, last_name, user_type.toString(), email, address, hash_password
+            "User[userId=%d, firstName='%s', lastName='%s', userType='%s', email='%s', address='%s', hashedPassword='%s']",
+            user_id, fname, lname, user_type, email, address, hashed_password
         );
     }
 
@@ -45,26 +46,26 @@ public class User {
     }
 
     public String getFirstName() {
-        return first_name;
+        return fname;
     }
 
-    public void setFirstName(String new_first_name) {
-        this.first_name = new_first_name;
+    public void setFirstName(String new_fname) {
+        this.fname = new_fname;
     }
 
     public String getLastName() {
-        return last_name;
+        return lname;
     }
 
-    public void setLastName(String new_last_name) {
-        this.last_name = new_last_name;
+    public void setLastName(String new_lname) {
+        this.lname = new_lname;
     }
 
-    public UserType getUserType() {
+    public String getUserType() {
         return user_type;
     }
 
-    public void setUserType(UserType new_user_type) {
+    public void setUserType(String new_user_type) {
         this.user_type = new_user_type;
     }
 
@@ -84,12 +85,12 @@ public class User {
         this.address = new_address;
     }
 
-    public String getHashPassword() {
-        return hash_password;
+    public String gethashedPassword() {
+        return hashed_password;
     }
 
-    public void setHashPassword(String new_hash_password) {
-        this.hash_password = new_hash_password;
+    public void sethashedPassword(String new_hashed_password) {
+        this.hashed_password = new_hashed_password;
     }
 
 }
