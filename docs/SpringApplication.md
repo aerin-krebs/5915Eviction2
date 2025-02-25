@@ -20,8 +20,8 @@
     Tests our streamed output in a step by step manner - uses TestPublisher 
  - **spring-framework-starter-data-jpa** \
     Adds java persistance entities for use in interfacing with the backend.
- - **my-sql-connector-j** \
-    Java implementation of the MySQL protocall - used with interfacing with the SQL database
+ - **h2-database** \
+    In memory database which maps SQL tables to java persistence entities.
 
 ## Application Logic
 
@@ -34,8 +34,6 @@
 #### Test Controller
 
 ## Entities
-
-#### Date
 
 #### Decision Node
 
@@ -52,6 +50,14 @@
 #### Resource
 
 #### User
+
+## Repositories
+
+## Services
+
+### Interfaces
+
+### Implementations
 
 ## Enum Sets
 
