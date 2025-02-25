@@ -13,20 +13,20 @@ public class QuestionAnswerServiceImpl implements QuestionAnswerService {
     private QuestionAnswerRepository questionAnswerRepository;
 
     @Override
-    QuestionAnswer saveQuestionAnswer(QuestionAnswer questionAnswer) {
+    public QuestionAnswer saveQuestionAnswer(QuestionAnswer questionAnswer) {
         return questionAnswerRepository.save(questionAnswer);
     }
 
     @Override
-    List<QuestionAnswer> fetchQuestionAnswerList() {
+    public List<QuestionAnswer> fetchQuestionAnswerList() {
         return (List<QuestionAnswer>)questionAnswerRepository.findAll();
     }
 
     @Override
-    QuestionAnswer updateQuestionAnswer(QuestionAnswer questionAnswer, Long questionAnswer_id) {
+    public QuestionAnswer updateQuestionAnswer(QuestionAnswer questionAnswer, Long questionAnswer_id) {
         QuestionAnswer questionAnswerDB = questionAnswerRepository.findById(questionAnswer_id).get();
 
-        if (Objects.nonNull(questionAnswer.getChildNode() && !"".equalsIgnoreCase(questionAnswer.getChildNode()))) {
+        if (Objects.nonNull(questionAnswer.getChildNode())) {
             questionAnswerDB.setChildNode(questionAnswer.getChildNode());
         }
        

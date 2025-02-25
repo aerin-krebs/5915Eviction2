@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "FAQ")
@@ -51,7 +52,7 @@ public class Faq {
         return answer;
     }
 
-    public void set(String new_answer) {
+    public void setAnswer(String new_answer) {
         this.answer = new_answer;
     }
 

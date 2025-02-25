@@ -11,5 +11,5 @@ public interface DecisionNodeService {
 
     DecisionNode updateDecisionNode(DecisionNode decisionNode, Long node_id);
 
-    void deleteByNodeID(Long node_id);
+    void deleteDecisionNodeByID(Long node_id);
 }

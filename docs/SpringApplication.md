@@ -268,10 +268,10 @@ public class ExampleTableServiceImpl implements ExampleTableService {
     ExampleTable updateExampleTable(ExampleTable exampleTable, Long exampleTable_id) {
         ExampleTable exampleTableDB = exampleTableRepository.findById(exampleTable_id).get();
 
-        if (Objects.nonNull(exampleTable.getExampleId() && !"".equalsIgnoreCase(exampleTable.getExampleId()))) {
+        if (Objects.nonNull(exampleTable.getExampleId()) && !"".equalsIgnoreCase(exampleTable.getExampleId())) {
             exampleTableDB.setExampleId(exampleTable.getExampleId());
         }
-        if (Objects.nonNull(exampleTable.getExampleData() && !"".equalsIgnoreCase(exampleTable.getExampleData()))) {
+        if (Objects.nonNull(exampleTable.getExampleData()) && !"".equalsIgnoreCase(exampleTable.getExampleData())) {
             exampleTableDB.setExampleData(exampleTable.getExampleData());
         }
        

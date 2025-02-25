@@ -13,17 +13,17 @@ public class NodeResourceServiceImpl implements NodeResourceService {
     private NodeResourceRepository nodeResourceRepository;
 
     @Override
-    NodeResource saveNodeResource(NodeResource nodeResource) {
+    public NodeResource saveNodeResource(NodeResource nodeResource) {
         return nodeResourceRepository.save(nodeResource);
     }
 
     @Override
-    List<NodeResource> fetchNodeResourceList() {
+    public List<NodeResource> fetchNodeResourceList() {
         return (List<NodeResource>)nodeResourceRepository.findAll();
     }
 
     @Override
-    NodeResource updateNodeResource(NodeResource nodeResource, Long nodeResource_id) {
+    public NodeResource updateNodeResource(NodeResource nodeResource, Long nodeResource_id) {
         NodeResource nodeResourceDB = nodeResourceRepository.findById(nodeResource_id).get();
 
         // Cannot update - only contains primary keys

@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.util.Date;
 
@@ -20,12 +21,12 @@ public class Resource {
     private String title;
     private String summary;
     private String url;
-    private String date_updated;
+    private Date date_updated;
     private long creator;
 
     protected Resource() {}
 
-    public Resource(long resource_id_p, ResourceCategory resource_category_p, String title_p, String url_p, Date date_updated_p) {
+    public Resource(long resource_id_p, String resource_category_p, String title_p, String url_p, Date date_updated_p) {
         this.resource_id = resource_id_p;
         this.resource_category = resource_category_p;
         this.title = title_p;
@@ -37,7 +38,7 @@ public class Resource {
     public String toString() {
         return String.format(
             "Resource[resourceId=%d, resourceCategory='%s', title='%s', summary='%s', url='%s', dateUpdated='%s', creatorId=%d]",
-            resource_id, resource_category.toString(), title, summary, url, date_updated.toString(), creator
+            resource_id, resource_category, title, summary, url, date_updated.toString(), creator
         );
     }
 
@@ -49,11 +50,11 @@ public class Resource {
         // INVALID - PRIMARY KEY
     }
 
-    public ResourceCategory getResourceCategory() {
+    public String getResourceCategory() {
         return resource_category;
     }
 
-    public void setResoourceCategory(ResourceCategory new_resource_category) {
+    public void setResourceCategory(String new_resource_category) {
         this.resource_category = new_resource_category;
     }
 

@@ -13,29 +13,29 @@ public class DecisionNodeServiceImpl implements DecisionNodeService {
     private DecisionNodeRepository decisionNodeRepository;
 
     @Override
-    DecisionNode saveDecisionNode(DecisionNode decisionNode) {
+    public DecisionNode saveDecisionNode(DecisionNode decisionNode) {
         return decisionNodeRepository.save(decisionNode);
     }
 
     @Override
-    List<DecisionNode> fetchDecisionNodeList() {
+    public List<DecisionNode> fetchDecisionNodeList() {
         return (List<DecisionNode>)decisionNodeRepository.findAll();
     }
 
     @Override
-    DecisionNode updateDecisionNode(DecisionNode decisionNode, Long decisionNode_id) {
+    public DecisionNode updateDecisionNode(DecisionNode decisionNode, Long decisionNode_id) {
         DecisionNode decisionNodeDB = decisionNodeRepository.findById(decisionNode_id).get();
 
-        if (Objects.nonNull(decisionNode.getIsLeaf() && !"".equalsIgnoreCase(decisionNode.getIsLeaf()))) {
+        if (Objects.nonNull(decisionNode.getIsLeaf())) {
             decisionNodeDB.setIsLeaf(decisionNode.getIsLeaf());
         }
-        if (Objects.nonNull(decisionNode.getDisplayType() && !"".equalsIgnoreCase(decisionNode.getDisplayType()))) {
+        if (Objects.nonNull(decisionNode.getDisplayType()) && !"".equalsIgnoreCase(decisionNode.getDisplayType())) {
             decisionNodeDB.setDisplayType(decisionNode.getDisplayType());
         }
-        if (Objects.nonNull(decisionNode.getQuestion() && !"".equalsIgnoreCase(decisionNode.getQuestion()))) {
+        if (Objects.nonNull(decisionNode.getQuestion()) && !"".equalsIgnoreCase(decisionNode.getQuestion())) {
             decisionNodeDB.setQuestion(decisionNode.getQuestion());
         }
-        if (Objects.nonNull(decisionNode.getNodeLanguage() && !"".equalsIgnoreCase(decisionNode.getNodeLanguage()))) {
+        if (Objects.nonNull(decisionNode.getNodeLanguage()) && !"".equalsIgnoreCase(decisionNode.getNodeLanguage())) {
             decisionNodeDB.setNodeLanguage(decisionNode.getNodeLanguage());
         }
        

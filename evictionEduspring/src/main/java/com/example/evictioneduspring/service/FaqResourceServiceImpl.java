@@ -13,17 +13,17 @@ public class FaqResourceServiceImpl implements FaqResourceService {
     private FaqResourceRepository faqResourceRepository;
 
     @Override
-    FaqResource saveFaqResource(FaqResource faqResource) {
+    public FaqResource saveFaqResource(FaqResource faqResource) {
         return faqResourceRepository.save(faqResource);
     }
 
     @Override
-    List<FaqResource> fetchFaqResourceList() {
+    public List<FaqResource> fetchFaqResourceList() {
         return (List<FaqResource>)faqResourceRepository.findAll();
     }
 
     @Override
-    FaqResource updateFaqResource(FaqResource faqResource, Long faqResource_id) {
+    public FaqResource updateFaqResource(FaqResource faqResource, Long faqResource_id) {
         FaqResource faqResourceDB = faqResourceRepository.findById(faqResource_id).get();
 
         // Cannot update - only contains primary keys

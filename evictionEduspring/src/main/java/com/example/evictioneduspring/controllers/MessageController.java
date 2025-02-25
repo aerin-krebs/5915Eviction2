@@ -1,4 +1,4 @@
-package com.example.evictioneduspring;
+package com.example.evictioneduspring.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;

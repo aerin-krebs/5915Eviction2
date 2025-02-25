@@ -23,7 +23,7 @@ public class DecisionNode {
 
     protected DecisionNode() {}
 
-    public DecisionNode(long node_id_p, boolean is_leaf_p, DisplayType display_type_p, Language node_language_p) {
+    public DecisionNode(long node_id_p, boolean is_leaf_p, String display_type_p, String node_language_p) {
         this.node_id = node_id_p;
         this.is_leaf = is_leaf_p;
         this.display_type = display_type_p;
@@ -34,7 +34,7 @@ public class DecisionNode {
     public String toString() {
         return String.format(
             "DecisionNode[nodeId=%d, isLeaf='%s', displayType='%s', question='%s', language='%s',]",
-            node_id, String.valueOf(is_leaf), display_type.toString(), question, node_language.toString()
+            node_id, String.valueOf(is_leaf), display_type, question, node_language
         );
     }
 
@@ -54,11 +54,11 @@ public class DecisionNode {
         this.is_leaf = new_is_leaf;
     }
 
-    public DisplayType getDisplayType() {
+    public String getDisplayType() {
         return display_type;
     }
 
-    public void setDisplayType(DisplayType new_display_type) {
+    public void setDisplayType(String new_display_type) {
         this.display_type = new_display_type;
     }
 
@@ -70,11 +70,11 @@ public class DecisionNode {
         this.question = new_question;
     }
 
-    public Language getNodeLanguage() {
+    public String getNodeLanguage() {
         return node_language;
     }
 
-    public void setNodeLanguage(Language new_node_language) {
+    public void setNodeLanguage(String new_node_language) {
         this.node_language = new_node_language;
     }
 }

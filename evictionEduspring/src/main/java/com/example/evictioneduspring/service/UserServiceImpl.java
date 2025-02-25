@@ -26,22 +26,22 @@ public class UserServiceImpl implements UserService {
     public User updateUser(User user, Long user_id) {
         User userDB = userRepository.findById(user_id).get();
 
-        if (Objects.nonNull(user.getFirstName() && !"".equalsIgnoreCase(user.getFirstName()))) {
+        if (Objects.nonNull(user.getFirstName()) && !"".equalsIgnoreCase(user.getFirstName())) {
             userDB.setFirstName(user.getFirstName());
         }
-        if (Objects.nonNull(user.getLastName() && !"".equalsIgnoreCase(user.getLastName()))) {
+        if (Objects.nonNull(user.getLastName()) && !"".equalsIgnoreCase(user.getLastName())) {
             userDB.setLastName(user.getLastName());
         }
-        if (Objects.nonNull(user.getUserType() && !"".equalsIgnoreCase(user.getUserType()))) {
+        if (Objects.nonNull(user.getUserType()) && !"".equalsIgnoreCase(user.getUserType())) {
             userDB.setUserType(user.getUserType());
         }
-        if (Objects.nonNull(user.getEmail() && !"".equalsIgnoreCase(user.getEmail()))) {
+        if (Objects.nonNull(user.getEmail()) && !"".equalsIgnoreCase(user.getEmail())) {
             userDB.setEmail(user.getEmail());
         }
-        if (Objects.nonNull(user.getAddress() && !"".equalsIgnoreCase(user.getAddress()))) {
+        if (Objects.nonNull(user.getAddress()) && !"".equalsIgnoreCase(user.getAddress())) {
             userDB.setAddress(user.getAddress());
         }
-        if (Objects.nonNull(user.getHashedPassword() && !"".equalsIgnoreCase(user.getHashedPassword()))) {
+        if (Objects.nonNull(user.getHashedPassword()) && !"".equalsIgnoreCase(user.getHashedPassword())) {
             userDB.setHashedPassword(user.getHashedPassword());
         }
 
