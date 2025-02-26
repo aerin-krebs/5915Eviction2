@@ -1,6 +1,9 @@
 package com.example.evictioneduspring.stepdefinitions;
 
+import com.example.evictioneduspring.utils.WebDriverSingleton;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.evictioneduspring.utils.CentralCommand;
 
@@ -18,5 +21,16 @@ public class Hooks {
         } else {
             throw new RuntimeException("❌ Failed to connect to the H2 database.");
         }
+    }
+
+    @Before("@setUp")
+    public void setUp() {
+        WebDriver driver = WebDriverSingleton.getDriver();
+        driver.manage().deleteAllCookies();// Optional: Start fresh each scenario
+    }
+
+    @After("@setUp")
+    public void tearDown() {
+        WebDriverSingleton.quitDriver(); // Quits after all scenarios
     }
 }
