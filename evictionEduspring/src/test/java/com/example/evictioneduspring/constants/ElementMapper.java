@@ -11,6 +11,7 @@ public class ElementMapper {
         elementMap.put("back button", XPathConstants.BACK_BUTTON);
 
         elementMap.put("chat now button", XPathConstants.CHAT_NOW_BUTTON);
+        elementMap.put("congrats text", XPathConstants.CONGRATS_TEXT);
 
         elementMap.put("faqs button", XPathConstants.FAQS_BUTTON);
         elementMap.put("find a solution button", XPathConstants.FIND_A_SOLUTION_BUTTON);

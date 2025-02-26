@@ -18,7 +18,7 @@ public class InitializationSteps {
      */
     @And("I go to the link {string}")
     public void iClickOn(String link) {
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.get(link);
     }
 }

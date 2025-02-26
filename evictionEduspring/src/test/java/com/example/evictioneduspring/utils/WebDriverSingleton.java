@@ -21,7 +21,7 @@ public class WebDriverSingleton {
             System.out.println(System.getProperty("user.dir"));
             System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--start-maximized");
+            //options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
         }
         return driver;
