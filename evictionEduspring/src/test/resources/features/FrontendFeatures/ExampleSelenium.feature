@@ -6,4 +6,4 @@ Feature: Example Selenium
 
   Scenario:
     And I click on "find a solution button"
-    And I wait "5" seconds
+    Then I check that "three day notice button" is visible

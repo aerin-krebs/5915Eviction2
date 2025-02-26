@@ -1,6 +1,7 @@
 package com.example.evictioneduspring.stepdefinitions;
 
 import com.example.evictioneduspring.constants.ElementMapper;
+import com.example.evictioneduspring.utils.TestHelper;
 import com.example.evictioneduspring.utils.WebDriverSingleton;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.By;
@@ -25,8 +26,7 @@ public class BasicSteps {
      */
     @And("I click on {string}")
     public void iClickOn(String elementName) {
-        String xpath = ElementMapper.getXPath(elementName);
-        driver.findElement(By.xpath(xpath)).click();
+        TestHelper.getElementByName(elementName).click();
     }
 
 

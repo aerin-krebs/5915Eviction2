@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class WebDriverSingleton {
 
-    private static WebDriver driver;
+    static WebDriver driver;
 
     private WebDriverSingleton() {
         // Prevent instantiation
