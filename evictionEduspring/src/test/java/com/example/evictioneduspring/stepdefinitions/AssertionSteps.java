@@ -1,6 +1,5 @@
 package com.example.evictioneduspring.stepdefinitions;
 
-import com.example.evictioneduspring.constants.ElementMapper;
 import com.example.evictioneduspring.utils.TestHelper;
 import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +26,10 @@ public class AssertionSteps {
     }
 
 
+    /**
+     * Checks if a certain web element is visible
+     * @param elementName
+     */
     @Then("I check that {string} is visible")
     public void iCheckThatIsVisible(String elementName) {
         assertTrue(TestHelper.getElementByName(elementName).isDisplayed());
