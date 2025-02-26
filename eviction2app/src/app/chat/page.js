@@ -1,51 +1,66 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
+import { Button } from '@mui/material';
+import Header from '../components/Header';
+import styles from '../home/Home.module.css';
 
 export default function Chat() {
-    // Example of opening an external chat (e.g. Messenger) or simply embedding a chat widget.
-    // For demonstration, we’ll just provide a button that links out to Facebook Messenger.
-    // Replace with your actual chat integration logic.
-
     const openMessenger = () => {
-        // For example, link to a Messenger page
-        window.open('https://m.me/your-page-name', '_blank');
+        window.open('https://www.messenger.com/t/1867045913328638/', '_blank');
     };
 
     return (
-        <div style={styles.container}>
-            <h1>Chat</h1>
-            <p>Click the button below to open a Messenger chat.</p>
-            <button style={styles.button} onClick={openMessenger}>
-                Open Messenger
-            </button>
-            <Link href="/" style={styles.backLink}>
-                Back to Home
-            </Link>
+        <div className={styles.container}>
+            <Header />
+            <div className={styles.contentBox}>
+                <p className={styles.title}>Need Legal Assistance?</p>
+                <p className={styles.text}>
+                    The Franklin County Municipal Court Self Help Resource Center provides free legal information.
+                    While staff cannot offer legal advice, they can assist you in understanding your options.
+                </p>
 
+                <Button
+                    onClick={openMessenger}
+                    variant="contained"
+                    sx={{ backgroundColor: '#fca311', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+                >
+                    Open Messenger Chat
+                </Button>
+
+                <p className={styles.title}>Other Ways to Get Help</p>
+                <p className={styles.text}>
+                    If you need more information, you can visit the Self Help Center in person at the Franklin County Municipal Court.
+                    You may also find useful resources online.
+                </p>
+
+                <Button
+                    component={Link}
+                    href="/resource-finder"
+                    variant="contained"
+                    sx={{ backgroundColor: '#fca311', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+                >
+                    View Resources
+                </Button>
+
+                <Button
+                    component={Link}
+                    href="/faq"
+                    variant="contained"
+                    sx={{ backgroundColor: '#fca311', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+                >
+                    Frequently Asked Questions
+                </Button>
+
+                <Button
+                    component={Link}
+                    href="/"
+                    variant="contained"
+                    sx={{ backgroundColor: '#fca311', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
+                >
+                    Back to Home
+                </Button>
+            </div>
         </div>
     );
 }
-
-const styles = {
-    container: {
-        padding: '1rem',
-        maxWidth: '600px',
-        margin: '0 auto',
-        textAlign: 'center',
-    },
-    button: {
-        backgroundColor: '#0070f3',
-        color: '#fff',
-        padding: '0.75rem 1rem',
-        borderRadius: '4px',
-        border: 'none',
-        cursor: 'pointer',
-    },
-    backLink: {
-        display: 'block',
-        marginTop: '1rem',
-        color: '#0070f3',
-        textDecoration: 'none',
-    },
-};
