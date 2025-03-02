@@ -19,3 +19,24 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+img.logo {
+  background-color: #d4e6f2;
+}
+
+/*trying to get rid of white strip near the nav bar*/
+nav {
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  display: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
