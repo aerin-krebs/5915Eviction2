@@ -11,18 +11,6 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Header />
-
-      {/* Logo   */}
-      <div className={styles.logoContainer}>
-        <Image
-          src="/eviction-logo1.png"
-          alt="Eviction Education Logo"
-          width={600} 
-          height={200} 
-          style={{ backgroundColor: '#d4e6f2' }} 
-        />
-      </div>
-
       <div className={styles.contentBox}>
         <p className={styles.title}>Are You Facing Eviction?</p>
         <p className={styles.text}>No one should lose their home. Find the help you need today.</p>
@@ -63,9 +51,7 @@ export default function Home() {
           component={Link}
           href="/resource-finder"
           variant="contained"
-          sx={{
-            backgroundColor: '#fca311', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem'
-          }}
+          sx={{ backgroundColor: '#fca311', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
         >
           Resources
         </Button>
