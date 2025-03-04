@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>EvictionEducation</h1>
+      <h1 className={styles.title}>Eviction Education</h1>
       <div className={styles.menuButton}>
         <button onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
