@@ -11,10 +11,11 @@
 .logo {
     display: flex;
     align-items: center;
+    width: 250px; 
   }
   
 .logo img {
-    width: 150px; /* Adjust the size as needed */
+    width: 250px; 
     height: auto;
     cursor: pointer;
 }

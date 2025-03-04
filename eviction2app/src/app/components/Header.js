@@ -14,7 +14,7 @@ export default function Header() {
     <header className={styles.header}>
       {/* Logo  */}
       <Link href="/" className={styles.logo}>
-        <Image src="/eviction-logo1.png" alt="Eviction Education Logo" width={150} height={50} />
+        <Image src="/eviction-logo1.png" alt="Eviction Education Logo" width={200} height={80} />
       </Link>
 
       <div className={styles.menuButton}>
