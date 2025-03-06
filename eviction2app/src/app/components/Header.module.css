@@ -1,6 +1,6 @@
 .header {
     background-color: #d4e6f2;
-    padding: 0rem 1rem;
+    padding: 0rem 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +54,7 @@
   
 .mobileMenu {
     position: absolute;
-    top: 4rem;
+    top: 7rem;
     left: 0;
     width: 100%;
     background-color: white;
@@ -66,6 +66,7 @@
     z-index: 50;
     font-family: Merriweather;
 }
+
   
 .mobileMenuLink {
     color: #1d3747;
