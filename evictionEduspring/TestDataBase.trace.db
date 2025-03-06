@@ -1,6 +1,0 @@
-2025-02-25 17:16:24.545641-05:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
-select u1_0.user_id,u1_0.address,u1_0.email,u1_0.fname,u1_0.hashed_password,u1_0.lname,u1_0.user_type from users u1_0 [42102-232]
-2025-02-26 21:42:39.318912-05:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
-CREATE TABLE Users ( user_id int NOT NULL, fname varchar(25), lname varchar(25), user_type varchar(10) NOT NULL, email varchar(50), address varchar(155), hashed_password varchar(100), PRIMARY KEY (user_id) ) [42101-232]

@@ -1,8 +1,9 @@
 node_id,is_leaf,display_type,question,node_language
-1,0,Video,"Have you been evicted yet?",English
-2,0,Text,Has an eviction notice been posted on you door?,English
-3,0,Text,Do you have dependents?,English
-4,1,Text,,English
-5,1,Text,,English
-6,1,Text,,English
-7,1,Text,,English
+1,0,Text,"Do you have a 3 or 30 day notice?",English
+2,0,Text,Are you in subsidized housing?,English
+3,0,Text,Are you in subsidized housing?,English
+4,0,Text,Did you successfully mediate?,English
+5,1,Text,Legal Aid Society.,English
+6,1,Text,More information needed.,English
+7,1,Text,No Mediation,English
+8,1,Text,Yes Mediation,English
