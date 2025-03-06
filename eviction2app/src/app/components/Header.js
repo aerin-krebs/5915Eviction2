@@ -6,9 +6,30 @@ import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from '@mui/material';
 import styles from './Header.module.css';
+import { useEffect } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    // Define the initialization function globally
+    window.googleTranslateElementInit = () => {
+      new window.google.translate.TranslateElement(
+        { pageLanguage: "en" },
+        "google_translate_element"
+      );
+    };
+
+    // Load the Google Translate script dynamically
+    const script = document.createElement("script");
+    script.src =
+      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -23,12 +44,14 @@ export default function Header() {
         </button>
       </div>
       <div className={styles.navLinks}>
+      {/* <div id="google_translate_element"></div> */}
         <Link href="/" underline="hover" color=" #1d3747" className={styles.navLink}>Home</Link>
         <Link href="/decision-finder" underline="hover" color=" #1d3747" className={styles.navLink}>Find A Solution</Link>
         <Link href="/chat" underline="hover" color=" #1d3747" className={styles.navLink}>Chat</Link>
         <Link href="/faq" underline="hover" color=" #1d3747" className={styles.navLink}>FAQs</Link>
         <Link href="/resource-finder" underline="hover" color=" #1d3747" className={styles.navLink}>Resources</Link>
-        <Link href="/" underline="hover" color=" #1d3747" className={styles.navLink}>Translate</Link>
+        {/* <Link href="/" underline="hover" color=" #1d3747" className={styles.navLink}>Translate</Link> */}
+        <div id="google_translate_element"></div>
       </div>
       {menuOpen && (
         <motion.div 
