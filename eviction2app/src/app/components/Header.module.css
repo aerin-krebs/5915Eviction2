@@ -1,12 +1,27 @@
 .header {
     background-color: #d4e6f2;
-    padding: 1rem;
+    padding: 0rem 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom-width: 5px;
     border-bottom-color: white;
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 200px; 
+  }
+  
+.logo img {
+    width: 200px; 
+    height: auto;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+  
   
 .title {
     font-size: 1.5rem;
@@ -39,7 +54,7 @@
   
 .mobileMenu {
     position: absolute;
-    top: 4rem;
+    top: 7rem;
     left: 0;
     width: 100%;
     background-color: white;
@@ -51,6 +66,7 @@
     z-index: 50;
     font-family: Merriweather;
 }
+
   
 .mobileMenuLink {
     color: #1d3747;

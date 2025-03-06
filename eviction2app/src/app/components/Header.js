@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from '@mui/material';
@@ -11,7 +12,11 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>EvictionEducation.</h1>
+      {/* Logo  */}
+      <Link href="/" className={styles.logo}>
+        <Image src="/eviction-logo2.png" alt="Eviction Education Logo" width={180} height={80} />
+      </Link>
+
       <div className={styles.menuButton}>
         <button onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
