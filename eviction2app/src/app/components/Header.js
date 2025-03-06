@@ -10,11 +10,49 @@ import { useEffect } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+
+  useEffect(() => {
+    // Inject custom CSS for Google Translate
+    const style = document.createElement('style');
+    style.textContent = `
+      .goog-te-gadget {
+        font-weight:600;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+      }
+      .VIpgJd-ZVi9od-l4eHX-hSRGPd{
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+      }
+      .goog-te-gadget img {
+        display: flex;
+        flex-direction: row;
+        align-items: center !important;
+        padding-left: 3px;
+      }
+      .goog-te-gadget span {
+        display: flex;
+        flex-direction: row;
+        font-size: 12px !important; /* Adjust font size */
+        // color: #666 !important; /* Adjust text color */
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Cleanup the injected style when the component unmounts
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   useEffect(() => {
     // Define the initialization function globally
     window.googleTranslateElementInit = () => {
       new window.google.translate.TranslateElement(
-        { pageLanguage: "en" },
+        { pageLanguage: "en", layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL},
         "google_translate_element"
       );
     };
@@ -44,13 +82,11 @@ export default function Header() {
         </button>
       </div>
       <div className={styles.navLinks}>
-      {/* <div id="google_translate_element"></div> */}
         <Link href="/" underline="hover" color=" #1d3747" className={styles.navLink}>Home</Link>
         <Link href="/decision-finder" underline="hover" color=" #1d3747" className={styles.navLink}>Find A Solution</Link>
         <Link href="/chat" underline="hover" color=" #1d3747" className={styles.navLink}>Chat</Link>
         <Link href="/faq" underline="hover" color=" #1d3747" className={styles.navLink}>FAQs</Link>
         <Link href="/resource-finder" underline="hover" color=" #1d3747" className={styles.navLink}>Resources</Link>
-        {/* <Link href="/" underline="hover" color=" #1d3747" className={styles.navLink}>Translate</Link> */}
         <div id="google_translate_element"></div>
       </div>
       {menuOpen && (
@@ -58,12 +94,12 @@ export default function Header() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className={styles.mobileMenu}>
+          <div id="google_translate_element"></div>
           <Link href="/" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>Home</Link>
           <Link href="/decision-finder" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>Find A Solution</Link>
           <Link href="/chat" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>Chat</Link>
           <Link href="/faq" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>FAQs</Link>
           <Link href="/resource-finder" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>Resources</Link>
-          <Link href="/" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>Translate</Link>
         </motion.div>
       )}
     </header>
