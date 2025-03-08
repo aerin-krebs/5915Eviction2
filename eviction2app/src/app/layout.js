@@ -41,6 +41,9 @@ export default function Layout({ children }) {
         flex-direction: row;
         font-size: 12px !important;
       }
+      .goog-te-combo {
+        width: 9rem;
+      }
     `;
     document.head.appendChild(style);
 

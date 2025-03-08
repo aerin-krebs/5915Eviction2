@@ -62,7 +62,7 @@ export default function Header() {
           </Link>
 
           {/* Google Translate: Visible in desktop */}
-          <div id="google_translate_element" />
+          <div className={styles.googleContainer}><div id="google_translate_element" /></div>
         </div>
       )}
 

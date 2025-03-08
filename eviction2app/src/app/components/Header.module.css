@@ -8,6 +8,10 @@
     border-bottom-color: white;
 }
 
+.googleContainer{
+    width:19rem;
+}
+
 .logo {
     display: flex;
     align-items: center;
