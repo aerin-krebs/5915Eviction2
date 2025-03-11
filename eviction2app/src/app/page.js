@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Header />
-      <LegalDisclaimer /> {}
+      <LegalDisclaimer />
       <div className={styles.contentBox}>
         <p className={styles.title}>Are You Facing Eviction?</p>
         <p className={styles.text}>No one should lose their home. Find the help you need today.</p>

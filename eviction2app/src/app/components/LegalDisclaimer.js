@@ -44,6 +44,27 @@ export default function LegalDisclaimer() {
           The website operators do not warrant or guarantee that the information provided is accurate, complete, or up-to-date. 
           Users are encouraged to seek professional legal advice to ensure compliance with the most current laws applicable to their circumstances. 
         </p>
+
+        <p><strong>1.5 Limitation of Liability</strong><br />
+          The website operators, contributors, and affiliated organizations shall not be held liable for any errors, omissions, or outcomes resulting from reliance on the information provided. 
+          Use of this website is at the user's own risk. 
+        </p>
+
+        <p><strong>1.6 Privacy</strong><br />
+          The operators of this website are committed to protecting users' privacy in compliance with applicable laws and regulations. 
+          Personal information collected through the platform, if any, will be used solely for the purpose of enhancing user experience, providing services, and improving the website. 
+          The website does not sell, rent, or share personal information with third parties without user consent, except as required by law. 
+          By using this website, users consent to the collection and use of their data as described in the Privacy Policy page. 
+          Users should be aware that the website may contain links to third-party sites, and the operators of this website are not responsible for the privacy practices or content of those external sites. 
+        </p>
+
+        <p><strong>1.7 Translation</strong><br />
+          This website utilizes Google Translate to provide automatic translations of its content. 
+          Automated translations may not always be accurate, precise, or reflective of the original legal meaning. 
+          Users should verify critical legal information with a qualified professional or refer to official legal resources in their preferred language. 
+          The website operators are not responsible for any misinterpretations, errors, or inaccuracies resulting from automated translations. 
+        </p>
+
         <button onClick={closePopup}>Close</button>
       </div>
     </div>
