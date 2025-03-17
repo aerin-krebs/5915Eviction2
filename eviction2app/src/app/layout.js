@@ -78,4 +78,17 @@ export default function Layout({ children }) {
       script.async = true;
       document.body.appendChild(script);
       
-      ret
+      return () => document.body.removeChild(script);
+    }
+  }, []);
+
+  return (
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Add Google Translate element here so it persists across pages */}
+        <div id="google_translate_element"  />
+        {children}
+      </body>
+    </html>
+  );
+}
