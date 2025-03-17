@@ -134,9 +134,7 @@ export default function DecisionFinder() {
                     <>
                         <button className={styles.backButton} onClick={handleBack}>⬅ Back</button>
                         <div className={styles.progressBarContainer}>
-                            <div className={styles.progressBar} style={{ width: `${progress}%` }}>
-                                <p className={styles.progressText}>{Math.round(progress)}%</p>
-                            </div>
+                            <div className={styles.progressBar} style={{ width: `${progress}%` }}/>
                         </div>
                     </>
                 )}

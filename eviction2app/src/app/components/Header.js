@@ -12,37 +12,29 @@ export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Function to check screen size
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); // Mobile view if width < 768px
+      setIsMobile(window.innerWidth < 768);
     };
-
-    checkScreenSize(); // Run on mount
-    window.addEventListener("resize", checkScreenSize); // Listen for resize
-
-    return () => window.removeEventListener("resize", checkScreenSize); // Cleanup
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
-        {/* Logo */}
         <Link href="/" className={styles.logo}>
           <Image src="/eviction-logo2.png" alt="Eviction Education Logo" width={180} height={80} />
         </Link>
-
-        {/* Google Translate: Only visible in mobile view */}
-        {isMobile && <div id="google_translate_element" />}
       </div>
 
-      {/* Mobile menu button */}
       <div className={styles.menuButton}>
         <button onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Desktop nav links */}
+      {/* Desktop Nav Links */}
       {!isMobile && (
         <div className={styles.navLinks}>
           <Link href="/" underline="hover" color="#1d3747" className={styles.navLink}>
@@ -60,13 +52,10 @@ export default function Header() {
           <Link href="/resource-finder" underline="hover" color="#1d3747" className={styles.navLink}>
             Resources
           </Link>
-
-          {/* Google Translate: Visible in desktop */}
-          <div className={styles.googleContainer}><div id="google_translate_element" /></div>
         </div>
       )}
 
-      {/* Mobile dropdown menu */}
+      {/* Mobile Dropdown Menu */}
       {menuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -76,12 +65,7 @@ export default function Header() {
           <Link href="/" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>
             Home
           </Link>
-          <Link
-            href="/decision-finder"
-            underline="hover"
-            color="#1d3747"
-            className={styles.mobileMenuLink}
-          >
+          <Link href="/decision-finder" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>
             Find A Solution
           </Link>
           <Link href="/chat" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>
@@ -90,12 +74,7 @@ export default function Header() {
           <Link href="/faq" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>
             FAQs
           </Link>
-          <Link
-            href="/resource-finder"
-            underline="hover"
-            color="#1d3747"
-            className={styles.mobileMenuLink}
-          >
+          <Link href="/resource-finder" underline="hover" color="#1d3747" className={styles.mobileMenuLink}>
             Resources
           </Link>
         </motion.div>
