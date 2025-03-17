@@ -1,0 +1,33 @@
+version: '3'
+services:
+  # h2:
+  #   image: h2:latest
+  #   ports:
+  #     - "3306:3306"
+  #   environment:
+  #     MYH2_ROOT_PASSWORD: P@ssw0rd
+  #     MYH2_USER: product_user
+  #     MYH2_PASSWORD: sa
+  #     MYH2_DATABASE: ghj
+  spring-boot-app:
+      build:
+        context: ./evictionEduspring
+        dockerfile: Dockerfile
+      ports:
+        - "8080:8080"
+      volumes:
+       - TestDataBase:/home/
+      environment:
+        SPRING_DATASOURCE_URL: dbc:h2:file:./TestDataBase
+        SPRING_DATASOURCE_USERNAME: sa
+        SPRING_DATASOURCE_PASSWORD: ghj
+
+  react-app:
+      build:
+        context: ./eviction2app
+        dockerfile: Dockerfile
+      ports:
+        - "3000:3000"
+
+volumes:
+    TestDataBase:
