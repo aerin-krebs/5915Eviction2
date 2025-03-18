@@ -20,7 +20,7 @@ export default function LegalDisclaimer() {
   return (
     <div className={styles.popup}>
       <div className={styles.popupContent}>
-        <h2>Legal Disclaimer</h2>
+        <h1><strong>Legal Disclaimer</strong></h1>
         <p><strong>1.1 General Disclaimer</strong><br />
           The content provided on this website, including but not limited to text, graphics, user interfaces, 
           trademarks, and computer code, is for informational purposes only and does not constitute legal advice. 

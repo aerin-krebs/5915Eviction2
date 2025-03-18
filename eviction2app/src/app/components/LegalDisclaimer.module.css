@@ -12,7 +12,8 @@
   }
   
   .popupContent {
-    background: white;
+    background-color: white;
+    color: black;
     padding: 20px;
     border-radius: 10px;
     text-align: left;
