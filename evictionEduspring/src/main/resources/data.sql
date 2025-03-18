@@ -23,20 +23,25 @@ INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (13, 'MISC.', 'Mid-Ohio Workers', 'Advocates for low-income workers through legal clinics, healthcare, and food drives.', 'google.com', '2025-02-12', 7);
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (14, 'Legal Counsel', 'Legal Aid Society of Central Ohio', 'Offers legal aid, including for evictions, to those at or below 125% of the FPL.', 'google.com', '2025-02-12', 7);
 
-INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (1, 0, 'Video', 'Have you been evicted yet?', 'English');
-INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (2, 0, 'Text', 'Has an eviction notice been posted on you door?', 'English');
-INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (3, 0, 'Text', 'Do you have dependents?', 'English');
-INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (4, 1, 'Text', '', 'English');
-INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (5, 1, 'Text', '', 'English');
-INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (6, 1, 'Text', '', 'English');
-INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (7, 1, 'Text', '', 'English');
+INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (1, 0, 'Text', 'Do you have a 3 or 30 day notice?', 'English');
+INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (2, 0, 'Text', 'Are you in subsidized housing?', 'English');
+INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (3, 0, 'Text', 'Are you in subsidized housing?', 'English');
+INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (4, 0, 'Text', 'Did you successfully mediate?', 'English');
+INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (5, 1, 'Text', 'Legal Aid Society.', 'English');
+INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (6, 1, 'Text', 'More information needed.', 'English');
+INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (7, 1, 'Text', 'No Mediation', 'English');
+INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (8, 1, 'Text', 'Yes Mediation', 'English');
 
-INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (1, 3, 'Yes');
-INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (1, 2, 'No');
-INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (2, 4, 'Yes');
-INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (2, 5, 'No');
-INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (3, 6, 'Yes');
-INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (3, 7, 'No');
+
+INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (1, 2, '30 Day');
+INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (1, 3, '3 Day');
+INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (2, 5, 'Yes');
+INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (2, 6, 'No');
+INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (3, 5, 'Yes');
+INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (3, 4, 'No');
+INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (4, 8, 'Yes');
+INSERT INTO Question_Answer(parent_node, child_node, answer) VALUES (4, 7, 'No');
+
 
 INSERT INTO FAQ(faq_id, question, answer) VALUES (1, 'What is the eviction process in Columbus, Ohio?', 'In Columbus, the eviction process begins with the landlord serving the tenant a Notice to Leave the Premises, providing at least a 3-day notice period. If the tenant does not vacate within this period, the landlord can file an eviction complaint in the Franklin County Municipal Court.');
 INSERT INTO FAQ(faq_id, question, answer) VALUES (2, 'What are the reasons a landlord can evict a tenant?', 'Common reasons for eviction include non-payment of rent, violation of lease terms, or engaging in illegal activities on the property.');
