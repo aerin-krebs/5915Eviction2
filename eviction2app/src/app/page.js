@@ -7,6 +7,7 @@ import Header from './components/Header';
 import styles from './home/Home.module.css';
 import './globals.css';
 import LegalDisclaimer from './components/LegalDisclaimer';
+import DataCollection from "./components/DataCollection";
 
 export default function Home() {
   return (
@@ -57,6 +58,7 @@ export default function Home() {
         >
           Resources
         </Button>
+        <DataCollection />
       </div>
     </div>
   );
