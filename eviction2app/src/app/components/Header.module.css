@@ -11,25 +11,11 @@
 .logo {
     display: flex;
     align-items: center;
-    width: 200px; 
-  }
-  
-.logo img {
-    width: 200px; 
+    width: 10rem;
     height: auto;
     cursor: pointer;
     margin: 0;
     padding: 0;
-}
-  
-  
-.title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #1d3747;
-    text-decoration: underline;
-    text-decoration-color: #ff4d00;
-    text-decoration-style:solid;
 }
   
 .menuButton {
@@ -39,17 +25,21 @@
   
 .navLinks {
     display: flex;
-    gap: 1.5rem;
+    font-size: 1rem;
+    font-weight: 900;
+    align-items: center;
+    gap: 1.5rem; /* Adjust spacing between items */
     font-family: Merriweather;
 }
-  
+
 .navLink {
     color: #1d3747;
     text-decoration: none;
 }
-  
+
 .navLink:hover {
     color: #1d3747;
+    text-decoration-thickness: .1rem;
 }
   
 .mobileMenu {

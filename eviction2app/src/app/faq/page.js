@@ -17,39 +17,52 @@ import {
 import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
 import faqsData from './faq.json';
 
-
 const CollapsibleRow = ({ faq }) => {
-    const [open, setOpen] = useState(false);
-  
-    return (
-      <>
-        <TableRow className={styles.tableRow}>
-          <TableCell className={styles.tableCell}>
-            <IconButton size="small" onClick={() => setOpen(!open)}>
-              {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
-            </IconButton>
-          </TableCell>
-          <TableCell onClick={() => setOpen(!open)}>{faq.question}</TableCell>
-        </TableRow>
-        <TableRow className={styles.tableRow}>
-          <TableCell style={{ padding: 0 }} colSpan={2}>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-              <Table size="small">
-                <TableBody>
-                  <TableRow>
-                    <TableCell colSpan={2} style={{ padding: '10px'}}>
-                      {faq.answer}
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </Collapse>
-          </TableCell>
-        </TableRow>
-      </>
-    );
+  const [open, setOpen] = useState(true); // Keep rows expanded by default
+
+  const handleToggle = () => {
+    setOpen(!open);
+
+    // Re-trigger Google Translate when opening the row
+    if (!open) {
+      setTimeout(() => {
+        const translateSelect = document.querySelector(".goog-te-combo");
+        if (translateSelect) {
+          // Re-trigger translation by simulating a change event
+          translateSelect.dispatchEvent(new Event("change"));
+        }
+      }, 100); // Slight delay to allow content to re-render
+    }
   };
-  
+
+  return (
+    <>
+      <TableRow className={styles.tableRow}>
+        <TableCell className={styles.tableCell}>
+          <IconButton size="small" onClick={handleToggle}>
+            {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
+          </IconButton>
+        </TableCell>
+        <TableCell onClick={handleToggle}>{faq.question}</TableCell>
+      </TableRow>
+      <TableRow className={styles.tableRow}>
+        <TableCell style={{ padding: 0 }} colSpan={2}>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <Table size="small">
+              <TableBody>
+                <TableRow>
+                  <TableCell colSpan={2} style={{ padding: '10px' }}>
+                    {faq.answer}
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Collapse>
+        </TableCell>
+      </TableRow>
+    </>
+  );
+};
 
 const CollapsibleTable = () => {
     const [faqs, setFaqs] = useState([]);
