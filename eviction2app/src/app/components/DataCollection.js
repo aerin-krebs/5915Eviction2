@@ -36,6 +36,8 @@ export default function DataCollectionPopup() {
         <div className={styles.overlay}>
           <div className={styles.popup}>
             <button className={styles.closeButton} onClick={closePopup}>✖</button>
+            {/* ADD */}
+            <div id="google_translate_element"  />
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSdzaPMaE_4reH9L8elz2lBy3amB1kQ1dCGmEXkVuAaZsKkuqw/viewform?embedded=true"
               width="100%"
