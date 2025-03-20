@@ -1,5 +1,5 @@
 # Build stage
-FROM node:18 AS build
+FROM node:18-alpine AS build
 
 WORKDIR /app
 
@@ -7,12 +7,15 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci --omit-dev && \
+    npm cache clean --force && \
+    rm -rf /tmp/* /var/cache/apk/*
 
 # Copy the rest of the application code
 COPY . .
 
 RUN npm run build
+
 
 # Expose the port
 EXPOSE 3000
