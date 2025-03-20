@@ -32,7 +32,7 @@ export default function Layout({ children }) {
         #google_translate_element {
           float: right;
           padding: 1rem;
-          padding-bottom: 1.85rem;
+          height: 86px;
           border-bottom-width: 5px;
           border-bottom-color: white;
           width: 21rem;
