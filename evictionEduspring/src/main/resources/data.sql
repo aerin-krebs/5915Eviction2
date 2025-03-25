@@ -21,6 +21,11 @@ INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (10, 'Youth Crisis Support', 'Star House', '24/7 Drop-in center & safe place to go (Ages 14 - 24). Access to food, clothing, hygiene, laundry, showers, case management, housing help, transportation, health care, legal aid, benefits, ID cards, and more.', '(614) 826-5868', '2025-03-17', 7);
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (11, 'Adult & Family Crisis Support', 'Youth Shelter Hotline', '', '(614) 294-5553', '2025-03-17', 7);
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (12, 'Adult & Family Crisis Support', 'CHOICES', '', '(614) 224-4663', '2025-03-17', 7);
+INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (13, 'Fillable Form', 'Eviction Removal Form', '', 'https://municipalcourt.franklincountyohio.gov/Forms/Eviction/Application-to-Remove-Eviction-from-Online-Access.aspx', '2025-03-25', 1);
+INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (14, 'Fillable Form', 'Notice to leave premises', '', 'https://municipalcourt.franklincountyohio.gov/Forms/Eviction/Notice-to-Leave-Premises.aspx', '2025-03-25', 1);
+INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (15, 'Fillable Form', 'Security Deposit Return Packet', '', 'https://irp.cdn-website.com/201ef22d/files/uploaded/Security_Deposit_Packet_-_LASCO_-_12.23.pdf', '2025-03-25', 1);
+INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (16, 'Fillable Form', 'Objection to the Magistrate’s Decision', '', 'https://municipalcourt.franklincountyohio.gov/Forms/Small-Claims/Objection.aspx', '2025-03-25', 1);
+INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (17, 'Fillable Form', 'Eviction Removal Packet', 'Eviction Removal Instructions with Credit Agency info', 'https://franklincountymunicourt.sharepoint.com/sites/SelfHelp/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSelfHelp%2FShared%20Documents%2FSelf%20Help%20Resource%20Center%2FHandouts%20for%20the%20Public%2FHousing%2FEviction%20Removal%20Packet&p=true&ga=1', '2025-03-25', 1);
 
 
 INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (1, 0, 'Text', 'Do you have a 3 or 30 day notice?', 'English');
@@ -54,4 +59,8 @@ INSERT INTO Node_Resource(node_id, resource_id) VALUES (5, 1);
 INSERT INTO Node_Resource(node_id, resource_id) VALUES (7, 2);
 
 
-INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (1, 1);
+INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (1, 13);
+INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (2, 14);
+INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (3, 15);
+INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (4, 16);
+INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (5, 17);
