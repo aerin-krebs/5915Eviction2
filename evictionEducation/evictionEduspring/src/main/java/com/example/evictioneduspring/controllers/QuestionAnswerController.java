@@ -20,7 +20,7 @@ public class QuestionAnswerController {
         this.questionAnswerRepository = questionAnswerRepository;
     }
 
-    @GetMapping("/{id}") // DEBUG
+    @GetMapping("/{id}") // 
     public QuestionAnswer getQuestionAnswerById(@PathVariable Long id) {
         return questionAnswerRepository.findById(id).orElseThrow(RuntimeException::new);
     }
