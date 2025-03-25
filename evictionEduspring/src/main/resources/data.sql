@@ -50,9 +50,8 @@ INSERT INTO FAQ(faq_id, question, answer) VALUES (4, 'Eviction Magistraite Objec
 INSERT INTO FAQ(faq_id, question, answer) VALUES (5, 'Credit Agency Info for Eviction Removal', 'Document here with information for 3 credit agencies we see most often reporting these cases. Request your transcripts with them. If this case is showing up, after you hear back from the Court, if the judge agrees to remove the case from online access, you can dispute those transcripts.');
 
 
-INSERT INTO Node_Resource(node_id, resource_id) VALUES (5, 14);
+INSERT INTO Node_Resource(node_id, resource_id) VALUES (5, 1);
 INSERT INTO Node_Resource(node_id, resource_id) VALUES (7, 2);
 
 
-INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (5, 14);
-INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (7, 14);
+INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (1, 1);
