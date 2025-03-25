@@ -6,16 +6,14 @@ import { Button } from '@mui/material';
 import Header from './components/Header';
 import styles from './home/Home.module.css';
 import './globals.css';
-import LegalDisclaimer from './components/LegalDisclaimer';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Header />
-      <LegalDisclaimer />
       <div className={styles.contentBox}>
         <p className={styles.title}>Are You Facing Eviction?</p>
-        <p className={styles.text}>No one should lose their home. Find the help you need today.</p>
+        <p className={styles.text}>Find the help you need today.</p>
         <Button
           component={Link}
           href="/decision-finder"
@@ -26,7 +24,7 @@ export default function Home() {
         </Button>
 
         <p className={styles.title}>Have legal questions?</p>
-        <p className={styles.text}>Chat with Franklin County Self Help Center. Staff cannot offer legal advice but can assist in finding helpful resources and provide legal information.</p>
+        <p className={styles.text}>Chat with Franklin County Self Help Center. Staff cannot offer legal advice but can provide legal information.</p>
         <Button
           component={Link}
           href="/chat"
@@ -48,7 +46,7 @@ export default function Home() {
         </Button>
 
         <p className={styles.title}>Looking for resources?</p>
-        <p className={styles.text}>Click below to see our list of resources to help you avoid eviction.</p>
+        <p className={styles.text}>Click below to see our list of resources.</p>
         <Button
           component={Link}
           href="/resource-finder"
