@@ -19,9 +19,6 @@ export default function EvictionPopup({ setEvictionPopupSeen }) {
   return (
     <Dialog open={open} onClose={() => handleChoice("no")}>
       <DialogTitle>Are You Facing Eviction?</DialogTitle>
-      <DialogContent>
-        <Typography>No one should lose their home. Let’s find help together.</Typography>
-      </DialogContent>
       <DialogActions>
         <Button
           onClick={() => handleChoice("yes")}
