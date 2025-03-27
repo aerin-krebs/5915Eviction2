@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/questions")
+@RequestMapping("/api/questions")
 public class QuestionAnswerController {
 
     private final QuestionAnswerRepository questionAnswerRepository;
@@ -20,7 +20,7 @@ public class QuestionAnswerController {
         this.questionAnswerRepository = questionAnswerRepository;
     }
 
-    @GetMapping("/{id}") // 
+    @GetMapping("/{id}") 
     public QuestionAnswer getQuestionAnswerById(@PathVariable Long id) {
         return questionAnswerRepository.findById(id).orElseThrow(RuntimeException::new);
     }

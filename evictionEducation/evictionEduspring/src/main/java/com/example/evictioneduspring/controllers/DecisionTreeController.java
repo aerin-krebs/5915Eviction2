@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/tree")
+@RequestMapping("/api/tree")
 public class DecisionTreeController {
 
     @Autowired private DecisionNodeService decisionNodeService;
