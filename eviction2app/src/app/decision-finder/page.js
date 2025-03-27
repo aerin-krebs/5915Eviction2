@@ -3,10 +3,24 @@
 import Link from 'next/link';
 import Header from '../components/Header.js';
 import { useState } from 'react';
-import styles from './DecisionFinder.module.css'; // Import CSS file
+import styles from './DecisionFinder.module.css'; 
+import DataCollectionPopup from "../components/DataCollectionPopup";
+
 
 export default function DecisionFinder() {
     const [history, setHistory] = useState(['start']);
+    const [isSurveyOpen, setSurveyOpen] = useState(false);
+
+    const handleExternalLinkClick = (event, link) => {
+        event.preventDefault(); // Prevent default navigation
+        setSurveyOpen(true); // Open survey popup
+
+        // Open the link in a new tab after a short delay
+        setTimeout(() => {
+            window.open(link, "_blank", "noopener,noreferrer");
+        }, 300);
+    };
+
     const handleChoice = (nextStep) => {
         setHistory((prev) => [...prev, nextStep]);
     };
@@ -78,7 +92,7 @@ export default function DecisionFinder() {
                 {step === 'yes30day' && (
                     <>
                         <p className={styles.result}>📌 You should contact the Legal Aid Society.</p>
-                        <Link href="/legal-aid-society" className={styles.link}>
+                        <Link href="/legal-aid-society" onClick={(event) => handleExternalLinkClick(event, '/legal-aid-society') } className={styles.link}>
                             Get Legal Assistance
                         </Link>
                     </>
@@ -93,7 +107,7 @@ export default function DecisionFinder() {
                 {step === 'yes3day' && (
                     <>
                         <p className={styles.result}>⚠️ Your notice may contain incorrect statements.</p>
-                        <Link href="/notice-incorrect-statement" className={styles.link}>
+                        <Link href="/notice-incorrect-statement" onClick={(event) => handleExternalLinkClick(event, '/notice-incorrect-statement') } className={styles.link}>
                             Learn More
                         </Link>
                     </>
@@ -120,11 +134,11 @@ export default function DecisionFinder() {
                 {step === 'noMediation' && (
                     <>
                         <p className={styles.question}>Check court-specific information.</p>
-                        <Link href="/court-specific-info" className={styles.link}>
+                        <Link href="/court-specific-info" onClick={(event) => handleExternalLinkClick(event, '/court-specific-info') } className={styles.link}>
                             Court Information
                         </Link>
                         <p className={styles.question}>Need assistance? Try our chatbot.</p>
-                        <Link href="/chat" className={styles.link}>
+                        <Link href="/chat" onClick={(event) => handleExternalLinkClick(event, '/chat') } className={styles.link}>
                             Open Chatbot
                         </Link>
                     </>
@@ -139,6 +153,7 @@ export default function DecisionFinder() {
                     </>
                 )}
             </div>
+            {<DataCollectionPopup isOpen={isSurveyOpen} onClose={() => setSurveyOpen(false)} />}
         </div>
     );
 }

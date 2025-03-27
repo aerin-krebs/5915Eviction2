@@ -6,6 +6,7 @@ import { Button } from '@mui/material';
 import Header from './components/Header';
 import styles from './home/Home.module.css';
 import './globals.css';
+import DataCollection from "./components/DataCollectionButton";
 
 export default function Home() {
   return (
@@ -55,6 +56,8 @@ export default function Home() {
         >
           Resources
         </Button>
+        
+        <DataCollection />
       </div>
     </div>
   );
