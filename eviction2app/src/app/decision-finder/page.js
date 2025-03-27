@@ -107,7 +107,7 @@ export default function DecisionFinder() {
                 {step === 'yes3day' && (
                     <>
                         <p className={styles.result}>⚠️ Your notice may contain incorrect statements.</p>
-                        <Link href="/notice-incorrect-statement" className={styles.link}>
+                        <Link href="/notice-incorrect-statement" onClick={(event) => handleExternalLinkClick(event, '/notice-incorrect-statement') } className={styles.link}>
                             Learn More
                         </Link>
                     </>
@@ -134,11 +134,11 @@ export default function DecisionFinder() {
                 {step === 'noMediation' && (
                     <>
                         <p className={styles.question}>Check court-specific information.</p>
-                        <Link href="/court-specific-info" className={styles.link}>
+                        <Link href="/court-specific-info" onClick={(event) => handleExternalLinkClick(event, '/court-specific-info') } className={styles.link}>
                             Court Information
                         </Link>
                         <p className={styles.question}>Need assistance? Try our chatbot.</p>
-                        <Link href="/chat" className={styles.link}>
+                        <Link href="/chat" onClick={(event) => handleExternalLinkClick(event, '/chat') } className={styles.link}>
                             Open Chatbot
                         </Link>
                     </>
