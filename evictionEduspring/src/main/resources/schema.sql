@@ -12,7 +12,7 @@ CREATE TABLE Users (
 
 CREATE TABLE Resources (
 	resource_id int NOT NULL,
-    resource_category varchar(25) NOT NULL,
+    resource_category varchar(100) NOT NULL,
 	title varchar(100) NOT NULL,
     summary text,
     url varchar(155) NOT NULL,
