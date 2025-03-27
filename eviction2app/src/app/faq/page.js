@@ -22,13 +22,13 @@ const CollapsibleRow = ({ faq }) => {
 
   const handleToggle = () => {
     setOpen(!open);
-
+  
     // Re-trigger Google Translate when opening the row
     if (!open) {
       setTimeout(() => {
         const translateSelect = document.querySelector(".goog-te-combo");
-        if (translateSelect) {
-          // Re-trigger translation by simulating a change event
+        if (translateSelect && translateSelect.value) {
+          // Only trigger translation if a language has been selected
           translateSelect.dispatchEvent(new Event("change"));
         }
       }, 100); // Slight delay to allow content to re-render
