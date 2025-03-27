@@ -66,7 +66,7 @@ export default function LegalDisclaimer({ onAccept }) {
           The website operators are not responsible for any misinterpretations, errors, or inaccuracies resulting from automated translations. 
         </p>
 
-        <button onClick={closePopup}>Close</button>
+        <button onClick={closePopup}>I agree</button>
       </div>
     </div>
   );
