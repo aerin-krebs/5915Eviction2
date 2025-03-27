@@ -15,7 +15,7 @@ CREATE TABLE Resources (
     resource_category varchar(100) NOT NULL,
 	title varchar(100) NOT NULL,
     summary text,
-    url varchar(155) NOT NULL,
+    url varchar(270) NOT NULL,
     date_updated date NOT NULL,
     creator int,
     PRIMARY KEY (resource_id),

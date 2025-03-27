@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.example.evictioneduspring.entities.Faq;
 import com.example.evictioneduspring.service.FaqService;
 import com.example.evictioneduspring.repositories.FaqRepository;
-import com.example.evictioneduspring.entities.Resource;
-import com.example.evictioneduspring.service.ResourceService;
-import com.example.evictioneduspring.repositories.ResourceRepository;
+import com.example.evictioneduspring.entities.FaqResource;
+import com.example.evictioneduspring.service.FaqResourceService;
+import com.example.evictioneduspring.repositories.FaqResourceRepository;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/faqs")
+@RequestMapping("/api/faqs")
 public class FAQController {
 
     @Autowired private FaqService faqService;
