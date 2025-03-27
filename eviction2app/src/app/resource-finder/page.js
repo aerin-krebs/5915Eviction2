@@ -3,11 +3,23 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Header from '../components/Header';
-import styles from './ResourceFinder.module.css'; // Import CSS file
+import styles from './ResourceFinder.module.css';
+import DataCollectionPopup from "../components/DataCollectionPopup";
 
 export default function ResourceFinder() {
     const [searchTerm, setSearchTerm] = useState('');
     const [filter, setFilter] = useState('All'); // Filter state
+    const [isSurveyOpen, setSurveyOpen] = useState(false);
+
+    const handleExternalLinkClick = (event, link) => {
+        event.preventDefault(); // Prevent default navigation
+        setSurveyOpen(true); // Open survey popup
+
+        // Open the link in a new tab after a short delay
+        setTimeout(() => {
+            window.open(link, "_blank", "noopener,noreferrer");
+        }, 300);
+    };
 
     // Example resources
     const resources = [
@@ -90,7 +102,7 @@ export default function ResourceFinder() {
                                 <td>{resource.description}</td>
                                 <td>{resource.prerequisites}</td>
                                 <td>
-                                    <Link href={resource.link} className={styles.link}>
+                                    <Link href={resource.link} onClick={(event) => handleExternalLinkClick(event, resource.link) } className={styles.link}>
                                         Learn More
                                     </Link>
                                 </td>
@@ -99,8 +111,8 @@ export default function ResourceFinder() {
                     </tbody>
                 </table>
             </div>
-
         </div>
+        {<DataCollectionPopup isOpen={isSurveyOpen} onClose={() => setSurveyOpen(false)} />}
         </div>
     );
 }

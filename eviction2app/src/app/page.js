@@ -7,7 +7,7 @@ import Header from './components/Header';
 import styles from './home/Home.module.css';
 import './globals.css';
 import LegalDisclaimer from './components/LegalDisclaimer';
-import DataCollection from "./components/DataCollection";
+import DataCollection from "./components/DataCollectionButton";
 
 export default function Home() {
   return (

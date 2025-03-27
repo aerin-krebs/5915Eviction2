@@ -3,10 +3,24 @@
 import Link from 'next/link';
 import Header from '../components/Header.js';
 import { useState } from 'react';
-import styles from './DecisionFinder.module.css'; // Import CSS file
+import styles from './DecisionFinder.module.css'; 
+import DataCollectionPopup from "../components/DataCollectionPopup";
+
 
 export default function DecisionFinder() {
     const [history, setHistory] = useState(['start']);
+    const [isSurveyOpen, setSurveyOpen] = useState(false);
+
+    const handleExternalLinkClick = (event, link) => {
+        event.preventDefault(); // Prevent default navigation
+        setSurveyOpen(true); // Open survey popup
+
+        // Open the link in a new tab after a short delay
+        setTimeout(() => {
+            window.open(link, "_blank", "noopener,noreferrer");
+        }, 300);
+    };
+
     const handleChoice = (nextStep) => {
         setHistory((prev) => [...prev, nextStep]);
     };
@@ -78,7 +92,7 @@ export default function DecisionFinder() {
                 {step === 'yes30day' && (
                     <>
                         <p className={styles.result}>📌 You should contact the Legal Aid Society.</p>
-                        <Link href="/legal-aid-society" className={styles.link}>
+                        <Link href="/legal-aid-society" onClick={(event) => handleExternalLinkClick(event, '/legal-aid-society') } className={styles.link}>
                             Get Legal Assistance
                         </Link>
                     </>
@@ -139,6 +153,7 @@ export default function DecisionFinder() {
                     </>
                 )}
             </div>
+            {<DataCollectionPopup isOpen={isSurveyOpen} onClose={() => setSurveyOpen(false)} />}
         </div>
     );
 }
