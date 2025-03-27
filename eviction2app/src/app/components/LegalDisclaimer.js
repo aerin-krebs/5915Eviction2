@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./LegalDisclaimer.module.css";
 
-export default function LegalDisclaimer() {
+export default function LegalDisclaimer({ onAccept }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -13,9 +13,10 @@ export default function LegalDisclaimer() {
   const closePopup = () => {
     setIsVisible(false);
     sessionStorage.setItem("legalDisclaimerAccepted", "true");
+    onAccept();
   };
 
-  if (!isVisible) return null; // Don't render the popup if it's not visible
+  if (!isVisible) return null; 
 
   return (
     <div className={styles.popup}>

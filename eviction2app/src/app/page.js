@@ -1,20 +1,42 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { Button } from '@mui/material';
-import Header from './components/Header';
-import styles from './home/Home.module.css';
-import './globals.css';
-import LegalDisclaimer from './components/LegalDisclaimer';
-import EvictionPopup from './components/EvictionPopup';
+import { useState, useEffect } from "react"; 
+import Link from "next/link";
+import { Button } from "@mui/material";
+import Header from "./components/Header";
+import styles from "./home/Home.module.css";
+import "./globals.css";
+import LegalDisclaimer from "./components/LegalDisclaimer";
+import EvictionPopup from "./components/EvictionPopup";
 
 export default function Home() {
+  const [legalAccepted, setLegalAccepted] = useState(false);
+  const [evictionPopupSeen, setEvictionPopupSeen] = useState(false);
+
+  useEffect(() => {
+    const accepted = sessionStorage.getItem("legalDisclaimerAccepted") === "true";
+    setLegalAccepted(accepted);
+
+    if (accepted && !sessionStorage.getItem("evictionPopupSeen")) {
+      setEvictionPopupSeen(true);
+      sessionStorage.setItem("evictionPopupSeen", "true");
+    }
+  }, []);
+
+  // Function to call when Legal Disclaimer is accepted
+  const handleLegalAccept = () => {
+    setLegalAccepted(true);
+    if (!sessionStorage.getItem("evictionPopupSeen")) {
+      setEvictionPopupSeen(true);
+      sessionStorage.setItem("evictionPopupSeen", "true");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Header />
-      <LegalDisclaimer />
-      <EvictionPopup />
+      <LegalDisclaimer onAccept={handleLegalAccept} />
+      {legalAccepted && evictionPopupSeen && <EvictionPopup setEvictionPopupSeen={setEvictionPopupSeen} />}
       <div className={styles.contentBox}>
         <p className={styles.title}>Are You Facing Eviction?</p>
         <p className={styles.text}>No one should lose their home. Find the help you need today.</p>

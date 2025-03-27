@@ -1,29 +1,18 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography } from "@mui/material";
 
-export default function EvictionPopup() {
-  const [open, setOpen] = useState(false);
+export default function EvictionPopup({ setEvictionPopupSeen }) {
+  const [open, setOpen] = useState(true);
   const router = useRouter();
-
-  useEffect(() => {
-    //popup appears only after the legal disclaimer is accepted
-    if (
-      sessionStorage.getItem("legalDisclaimerAccepted") &&
-      !sessionStorage.getItem("evictionPopupSeen")
-    ) {
-      setOpen(true);
-    }
-  }, []);
 
   const handleChoice = (choice) => {
     setOpen(false);
-    sessionStorage.setItem("evictionPopupSeen", "true");
-
+    setEvictionPopupSeen(true); // Mark it as seen in page
     if (choice === "yes") {
-      router.push("/decision-finder"); // Route to DecisionFinder
+      router.push("/decision-finder");
     }
   };
 
