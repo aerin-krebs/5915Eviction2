@@ -28,7 +28,7 @@ export default function DataCollectionPopup() {
     <>
       {/* Floating Button */}
       <button className={styles.floatingButton} onClick={openPopup}>
-        📋 Demographic Survey
+        Demographic Survey
       </button>
 
       {/* Popup Modal */}

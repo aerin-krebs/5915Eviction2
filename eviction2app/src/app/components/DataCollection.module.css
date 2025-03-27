@@ -12,12 +12,9 @@
   font-size: 14px;
   font-weight: bold;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  animation: bounce 1.5s infinite ease-in-out; /* Continuous bounce */
-  transition: transform 0.2s ease-in-out, background-color 0.2s;
   will-change: transform;
 }
 
-/* DOES NOT WORK with animation */
 .floatingButton:hover {
   background-color: #e08e00;
   transform: scale(1.2);
