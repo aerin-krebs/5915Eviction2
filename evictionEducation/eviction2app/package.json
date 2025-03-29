@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.4",
     "@mui/material": "^6.4.4",
+    "axios": "^1.8.4",
     "framer-motion": "^12.4.3",
     "lucide-react": "^0.475.0",
     "mui": "^0.0.1",

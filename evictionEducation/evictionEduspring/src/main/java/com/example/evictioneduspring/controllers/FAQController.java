@@ -1,8 +1,5 @@
 package com.example.evictioneduspring.controllers;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import com.example.evictioneduspring.entities.Faq;
 import com.example.evictioneduspring.service.FaqService;
 import com.example.evictioneduspring.repositories.FaqRepository;
@@ -16,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/faqs")
+@CrossOrigin(origins = "http://localhost:3000")  // Allow frontend access
 public class FAQController {
 
     @Autowired private FaqService faqService;

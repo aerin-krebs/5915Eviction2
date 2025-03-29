@@ -1,8 +1,5 @@
 package com.example.evictioneduspring.controllers;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import com.example.evictioneduspring.entities.Resource;
 import com.example.evictioneduspring.entities.FaqResource;
 import com.example.evictioneduspring.entities.NodeResource;
@@ -17,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/resources")
+@CrossOrigin(origins = "http://localhost:3000")  // Allow frontend access
 public class ResourceController {
 
     @Autowired private ResourceService resourceService;
