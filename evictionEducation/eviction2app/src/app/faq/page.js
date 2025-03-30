@@ -9,32 +9,64 @@ import {
     TableBody,
     TableCell,
     TableContainer,
-    TableHead,
     TableRow,
     Paper,
     IconButton,
     Collapse,
 } from '@mui/material';
 import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
+import { getFAQResourceById, getFAQs, getResources } from '../api.js';
 
-const API_URL = "http://localhost:8080/api/faqs";
+/** Helper function to detect phone numbers */
+const isPhoneNumber = (text) => {
+    const phoneRegex = /^\+?\d{7,15}$/; // Matches phone numbers like "+1234567890"
+    return phoneRegex.test(text);
+};
 
 const CollapsibleRow = ({ faq }) => {
-  const [open, setOpen] = useState(true); // Keep rows expanded by default
+  const [open, setOpen] = useState(true);
+  const [resources, setResources] = useState([]); // Store related resources
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchResources = async () => {
+      try {
+        // Step 1: Fetch the list of related resource IDs
+        const resourceData = await getFAQResourceById(faq.faqId);
+
+        // Ensure resourceData is always an array before mapping
+        const resourceIds = Array.isArray(resourceData) 
+          ? resourceData.map((entry) => entry.resourceId) 
+          : [resourceData.resourceId];
+
+        if (!resourceIds || resourceIds.length === 0) {
+          console.warn(`No resources found for FAQ ${faq.faqId}.`);
+          setResources([]);
+          setLoading(false);
+          return;
+        }
+
+        // Step 2: Fetch all resources
+        const resAll = await getResources();
+        const matchedResources = resAll.filter((resource) =>
+          resourceIds.includes(resource.resourceId)
+        );
+
+        setResources(matchedResources);
+      } catch (err) {
+        console.error(`Error fetching resources for FAQ ${faq.faqId}:`, err);
+        setError("Failed to load resources.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchResources();
+  }, [faq.faqId]); // Ensures useEffect runs only once per FAQ
 
   const handleToggle = () => {
     setOpen(!open);
-  
-    // Re-trigger Google Translate when opening the row
-    if (!open) {
-      setTimeout(() => {
-        const translateSelect = document.querySelector(".goog-te-combo");
-        if (translateSelect && translateSelect.value) {
-          // Only trigger translation if a language has been selected
-          translateSelect.dispatchEvent(new Event("change"));
-        }
-      }, 100); // Slight delay to allow content to re-render
-    }
   };
 
   return (
@@ -57,6 +89,48 @@ const CollapsibleRow = ({ faq }) => {
                     {faq.answer}
                   </TableCell>
                 </TableRow>
+                
+                {/* Display Resources If Available */}
+                {loading ? (
+                  <TableRow>
+                    <TableCell colSpan={2}>Loading resources...</TableCell>
+                  </TableRow>
+                ) : error ? (
+                  <TableRow>
+                    <TableCell colSpan={2} style={{ color: "red" }}>
+                      {error}
+                    </TableCell>
+                  </TableRow>
+                ) : resources.length > 0 ? (
+                  <TableRow>
+                    <TableCell colSpan={2}>
+                      <strong>Related Resources:</strong>
+                      <ul>
+                        {resources.map((resource) => (
+                          <li key={resource.resourceId} style={{ marginBottom: "8px" }}>
+                            {isPhoneNumber(resource.url) ? (
+                              <a href={`tel:${resource.url}`} 
+                                style={{ color: "blue", fontWeight: "bold", textDecoration: "underline" }}>
+                                📞 {resource.title || resource.url}
+                              </a>
+                            ) : (
+                              <a href={resource.url} target="_blank" rel="noopener noreferrer"
+                                style={{ color: "#007bff", fontWeight: "bold", textDecoration: "underline" }}>
+                                🔗 {resource.title || resource.url}
+                              </a>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </TableCell>
+                  </TableRow>
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={2} style={{ fontStyle: "italic" }}>
+                      No resources available for this FAQ.
+                    </TableCell>
+                  </TableRow>
+                )}
               </TableBody>
             </Table>
           </Collapse>
@@ -74,8 +148,8 @@ const CollapsibleTable = () => {
   useEffect(() => {
       const fetchFAQs = async () => {
           try {
-              const response = await axios.get(API_URL);
-              setFaqs(response.data);
+              const data = await getFAQs();
+              setFaqs(data);
           } catch (err) {
               setError("Failed to load FAQs. Please try again later.");
               console.error("Error fetching FAQs:", err);
