@@ -19,8 +19,9 @@ import { getFAQResourceById, getFAQs, getResources } from '../api.js';
 
 /** Helper function to detect phone numbers */
 const isPhoneNumber = (text) => {
-    const phoneRegex = /^\+?\d{7,15}$/; // Matches phone numbers like "+1234567890"
-    return phoneRegex.test(text);
+  // Matches phone numbers like (614) 294-6347 or 614-294-6347 or 6142946347
+  const phoneRegex = /^(\(\d{3}\)\s?|\d{3}[-.\s]?)\d{3}[-.\s]?\d{4}$/;
+  return phoneRegex.test(text);
 };
 
 const CollapsibleRow = ({ faq }) => {
