@@ -18,7 +18,7 @@ export const getFAQResourceById = async (faqId) => {
         const response = await axios.get(`${API_BASE_URL}/resources/faq/${faqId}`);
         return response.data;
     } catch (error) {
-        console.error("Error fetching FAQs:", error);
+        console.error("Error fetching Resource IDs:", error);
         return [];
     }
 };
@@ -29,7 +29,18 @@ export const getResources = async () => {
         const response = await axios.get(`${API_BASE_URL}/resources`);
         return response.data;
     } catch (error) {
-        console.error("Error fetching FAQs:", error);
+        console.error("Error fetching Resources:", error);
+        return [];
+    }
+};
+
+
+export const getFaqlResourceList = async () => {
+    try {
+        const response = await axios.get(`${API_BASE_URL}/resources/faq-list`);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching Resource ID list:", error);
         return [];
     }
 };

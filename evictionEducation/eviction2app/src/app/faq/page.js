@@ -15,7 +15,7 @@ import {
     Collapse,
 } from '@mui/material';
 import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
-import { getFAQResourceById, getFAQs, getResources } from '../api.js';
+import { getFaqlResourceList, getFAQResourceById, getFAQs, getResources } from '../api.js';
 
 /** Helper function to detect phone numbers */
 const isPhoneNumber = (text) => {
@@ -34,7 +34,10 @@ const CollapsibleRow = ({ faq }) => {
     const fetchResources = async () => {
       try {
         // Step 1: Fetch the list of related resource IDs
-        const resourceData = await getFAQResourceById(faq.faqId);
+        const resourcePairings = await getFaqlResourceList();
+        const resourceData = resourcePairings.filter((pairs) =>
+          pairs.faqId === faq.faqId
+        );
 
         // Ensure resourceData is always an array before mapping
         const resourceIds = Array.isArray(resourceData) 
