@@ -18,17 +18,17 @@ export const getFAQResourceById = async (faqId) => {
         const response = await axios.get(`${API_BASE_URL}/resources/faq/${faqId}`);
         return response.data;
     } catch (error) {
-        console.error("Error fetching Faq and Resource IDs:", error);
+        console.warn(`No resources found for FAQ ${faqId}.`);
         return [];
     }
 };
 
-export const getNodeResourceById = async (faqId) => {
+export const getNodeResourceById = async (nodeId) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/resources/node/${faqId}`);
+        const response = await axios.get(`${API_BASE_URL}/resources/node/${nodeId}`);
         return response.data;
     } catch (error) {
-        console.error("Error fetching Node and Resource IDs:", error);
+        console.warn(`No resources found for Node ${nodeId}.`);
         return [];
     }
 };
@@ -48,6 +48,16 @@ export const getResources = async () => {
 export const getFaqResourceList = async () => {
     try {
         const response = await axios.get(`${API_BASE_URL}/resources/faq-list`);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching Resource ID list:", error);
+        return [];
+    }
+};
+
+export const getNodeResourceList = async () => {
+    try {
+        const response = await axios.get(`${API_BASE_URL}/resources/node-list`);
         return response.data;
     } catch (error) {
         console.error("Error fetching Resource ID list:", error);

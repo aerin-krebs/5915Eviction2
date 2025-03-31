@@ -44,7 +44,6 @@ const CollapsibleRow = ({ faq }) => {
           : [resourceData.resourceId];
 
         if (!resourceIds || resourceIds.length === 0) {
-          console.warn(`No resources found for FAQ ${faq.faqId}.`);
           setResources([]);
           setLoading(false);
           return;

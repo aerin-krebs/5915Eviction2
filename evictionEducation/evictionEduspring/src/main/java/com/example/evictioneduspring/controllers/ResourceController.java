@@ -5,6 +5,7 @@ import com.example.evictioneduspring.entities.FaqResource;
 import com.example.evictioneduspring.entities.NodeResource;
 import com.example.evictioneduspring.service.ResourceService;
 import com.example.evictioneduspring.service.FaqResourceService;
+import com.example.evictioneduspring.service.NodeResourceService;
 import com.example.evictioneduspring.repositories.FaqResourceRepository;
 import com.example.evictioneduspring.repositories.NodeResourceRepository;
 
@@ -19,6 +20,7 @@ public class ResourceController {
 
     @Autowired private ResourceService resourceService;
     @Autowired private FaqResourceService faqResourceService;
+    @Autowired private NodeResourceService nodeResourceService;
 
     private final NodeResourceRepository nodeResourceRepository;
     private final FaqResourceRepository faqResourceRepository;
@@ -49,7 +51,7 @@ public class ResourceController {
     }
 
     @GetMapping("/node-list")
-    public List<FaqResource> getNodeResourceList() {
-        return faqResourceService.fetchFaqResourceList(); 
+    public List<NodeResource> getNodeResourceList() {
+        return nodeResourceService.fetchNodeResourceList(); 
     }
 }
