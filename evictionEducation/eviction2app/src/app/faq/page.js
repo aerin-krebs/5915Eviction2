@@ -3,7 +3,6 @@
 import Header from '../components/Header.js';
 import styles from './FAQ.module.css';
 import React, { useState, useEffect } from 'react';
-import axios from "axios"; // Import axios
 import {
     Table,
     TableBody,
@@ -15,7 +14,7 @@ import {
     Collapse,
 } from '@mui/material';
 import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
-import { getFaqlResourceList, getFAQResourceById, getFAQs, getResources } from '../api.js';
+import { getFaqResourceList, getFAQResourceById, getFAQs, getResources } from '../api.js';
 
 /** Helper function to detect phone numbers */
 const isPhoneNumber = (text) => {
@@ -34,7 +33,7 @@ const CollapsibleRow = ({ faq }) => {
     const fetchResources = async () => {
       try {
         // Step 1: Fetch the list of related resource IDs
-        const resourcePairings = await getFaqlResourceList();
+        const resourcePairings = await getFaqResourceList();
         const resourceData = resourcePairings.filter((pairs) =>
           pairs.faqId === faq.faqId
         );

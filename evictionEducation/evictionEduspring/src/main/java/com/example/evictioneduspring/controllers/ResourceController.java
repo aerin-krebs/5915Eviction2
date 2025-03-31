@@ -44,7 +44,12 @@ public class ResourceController {
     }
 
     @GetMapping("/faq-list")
-    public List<FaqResource> getFaqlResourceList() {
+    public List<FaqResource> getFaqResourceList() {
+        return faqResourceService.fetchFaqResourceList(); 
+    }
+
+    @GetMapping("/node-list")
+    public List<FaqResource> getNodeResourceList() {
         return faqResourceService.fetchFaqResourceList(); 
     }
 }

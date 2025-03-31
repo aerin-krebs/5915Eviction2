@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import axios from "axios"; // Import axios
 import Header from '../components/Header';
 import styles from './ResourceFinder.module.css';
 import DataCollectionPopup from "../components/DataCollectionPopup";

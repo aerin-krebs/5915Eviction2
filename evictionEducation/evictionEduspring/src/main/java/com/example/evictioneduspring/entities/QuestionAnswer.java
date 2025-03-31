@@ -1,38 +1,34 @@
 package com.example.evictioneduspring.entities;
 
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Question_Answer")
 public class QuestionAnswer {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private long parent_node;
-    private long child_node;
-    private String answer;
+    @EmbeddedId
+    private QuestionAnswerKey key;  // Use composite key
+    private long childNode;
 
     protected QuestionAnswer() {}
 
-    public QuestionAnswer(long parent_node_p, String answer_p) {
-        this.parent_node = parent_node_p;
-        this.answer = answer_p;
+    public QuestionAnswer(long parent_node_p, long child_node_p, String answer_p) {
+        key = new QuestionAnswerKey(parent_node_p, answer_p);
+        childNode = child_node_p;
     }
 
     @Override
     public String toString() {
         return String.format(
             "QuestionAnswer[parentNode=%d, childNode=%d, answer='%s']",
-            parent_node, child_node, answer
+            key.getParentNode(), childNode, key.getAnswer()
         );
     }
 
     public long getParentNode() {
-        return parent_node;
+        return key.getParentNode();
     }
 
     public void setParentNode(long new_parent_node) {
@@ -40,15 +36,15 @@ public class QuestionAnswer {
     }
 
     public long getChildNode() {
-        return child_node;
+        return childNode;
     }
 
     public void setChildNode(long new_child_node) {
-        this.child_node = new_child_node;
+        // INVALID - PRIMARY KEY
     }
 
     public String getAnswer() {
-        return answer;
+        return key.getAnswer();
     }
 
     public void setAnswer(String new_answer) {
