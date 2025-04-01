@@ -6,6 +6,7 @@ This is intended to be a comprehensive guide to the ayout and impementation of t
 - [`React Front End`]()
 - [`Springboot Middleware`](./SpringApplication.md)
 - [`SQL Database`]()
+- [`Deployment and Docker`](./DeploymentAndDocker.md)
 - [`Example Documentation`](./ExampleDocs.md)
 
 ## Design Overview
