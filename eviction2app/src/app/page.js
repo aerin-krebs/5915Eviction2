@@ -9,6 +9,7 @@ import styles from "./home/Home.module.css";
 import "./globals.css";
 import LegalDisclaimer from "./components/LegalDisclaimer";
 import EvictionPopup from "./components/EvictionPopup";
+
 import DataCollection from "./components/DataCollectionButton";
 
 export default function Home() {

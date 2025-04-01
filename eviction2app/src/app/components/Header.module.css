@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 86px;
     border-bottom-width: 5px;
     border-bottom-color: white;
 }

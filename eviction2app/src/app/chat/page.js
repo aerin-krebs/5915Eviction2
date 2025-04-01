@@ -1,15 +1,27 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { Button } from '@mui/material';
 import Header from '../components/Header';
 import styles from '../home/Home.module.css';
+import DataCollectionPopup from "../components/DataCollectionPopup";
 
 export default function Chat() {
     const openMessenger = () => {
         window.open('https://www.messenger.com/t/1867045913328638/', '_blank');
     };
+    const [isSurveyOpen, setSurveyOpen] = useState(false);
+    const handleExternalLinkClick = (event, link) => {
+        event.preventDefault(); // Prevent default navigation
+        setSurveyOpen(true); // Open survey popup
 
+        // Open the link in a new tab after a short delay
+        setTimeout(() => {
+            window.open(link, "_blank", "noopener,noreferrer");
+        }, 300);
+    };
+    
     return (
         <div className={styles.container}>
             <Header />
@@ -21,7 +33,7 @@ export default function Chat() {
                 </p>
 
                 <Button
-                    onClick={openMessenger}
+                    onClick={(event) => handleExternalLinkClick(event, openMessenger()) }
                     variant="contained"
                     sx={{ backgroundColor: '#fca311', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
                 >
@@ -61,6 +73,7 @@ export default function Chat() {
                     Back to Home
                 </Button>
             </div>
+            {<DataCollectionPopup isOpen={isSurveyOpen} onClose={() => setSurveyOpen(false)} />}
         </div>
     );
 }
