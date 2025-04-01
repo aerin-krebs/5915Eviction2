@@ -7,6 +7,13 @@ import styles from "./DecisionFinder.module.css";
 import DataCollectionPopup from "../components/DataCollectionPopup";
 import { getDecisionTreeNodeById, getQuestionAnswerList, getResources, getNodeResourceList } from "../api.js"; 
 
+/** Helper function to detect phone numbers */
+const isPhoneNumber = (text) => {
+    // Matches phone numbers like (614) 294-6347 or 614-294-6347 or 6142946347
+    const phoneRegex = /^(\(\d{3}\)\s?|\d{3}[-.\s]?)\d{3}[-.\s]?\d{4}$/;
+    return phoneRegex.test(text);
+  };
+
 export default function DecisionFinder() {
     const [history, setHistory] = useState([1]); // Ensure Node 1 is always stored initially
     const [currentNode, setCurrentNode] = useState(null); // Holds the current decision node
@@ -122,19 +129,27 @@ export default function DecisionFinder() {
                         ))}
 
                         {/* If node IS a leaf, display resources */}
-                        {currentNode.isLeaf && resources.length > 0 && (
+                        {resources.length > 0 && (
                             <div className={styles.result}>
                                 <p>📌 Recommended Resources:</p>
-                                {resources.map((resource, index) => (
-                                    <Link 
-                                        key={index} 
-                                        href={resource.url} 
-                                        onClick={(event) => handleExternalLinkClick(event, resource.url)}
-                                        className={styles.link}
-                                    >
-                                        {resource.title}
-                                    </Link>
-                                ))}
+                                <ul>
+                                    {resources.map((resource, index) => (
+                                        <li key={index} style={{ marginBottom: "8px" }}>
+                                            {isPhoneNumber(resource.url) ? (
+                                                <a href={`tel:${resource.url}`} 
+                                                    className={styles.link}>
+                                                    📞 {resource.title || resource.url}
+                                                </a>
+                                            ) : (
+                                                <a href={resource.url} 
+                                                    onClick={(event) => handleExternalLinkClick(event, resource.url)}
+                                                    className={styles.link}>
+                                                    🔗 {resource.title || resource.url}
+                                                </a>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         )}
 
