@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./LegalDisclaimer.module.css";
 
-export default function LegalDisclaimer() {
+export default function LegalDisclaimer({ onAccept }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -13,9 +13,10 @@ export default function LegalDisclaimer() {
   const closePopup = () => {
     setIsVisible(false);
     sessionStorage.setItem("legalDisclaimerAccepted", "true");
+    onAccept();
   };
 
-  if (!isVisible) return null; // Don't render the popup if it's not visible
+  if (!isVisible) return null; 
 
   return (
     <div className={styles.popup}>
@@ -65,7 +66,7 @@ export default function LegalDisclaimer() {
           The website operators are not responsible for any misinterpretations, errors, or inaccuracies resulting from automated translations. 
         </p>
 
-        <button onClick={closePopup}>Close</button>
+        <button onClick={closePopup}>I agree</button>
       </div>
     </div>
   );

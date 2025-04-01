@@ -37,7 +37,7 @@ export default function Chat() {
                     variant="contained"
                     sx={{ backgroundColor: '#fca311', color: '#1d3747', borderRadius: '50px', padding: '12px 24px', fontWeight: 'bold', margin: '1rem' }}
                 >
-                    Open Messenger Chat
+                    Open Facebook Messenger Chat
                 </Button>
 
                 <p className={styles.title}>Other Ways to Get Help</p>
