@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-public class MessageController { // This is a test controller to make sure we can acess endpoints
+public class TestController { // This is a test controller to make sure we can acess endpoints
 
     @Autowired private UserService userService;
 
