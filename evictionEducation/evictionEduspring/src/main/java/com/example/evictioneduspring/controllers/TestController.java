@@ -10,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class MessageController {
+@RequestMapping("/api")
+public class TestController { // This is a test controller to make sure we can acess endpoints
 
     @Autowired private UserService userService;
 

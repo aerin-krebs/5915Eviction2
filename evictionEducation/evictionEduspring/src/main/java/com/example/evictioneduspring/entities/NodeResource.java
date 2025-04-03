@@ -1,51 +1,30 @@
 package com.example.evictioneduspring.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Node_Resource")
 public class NodeResource {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private long node_id;
-    private long resource_id;
+    @EmbeddedId
+    private NodeResourceId id;  // Use composite key
 
     protected NodeResource() {}
 
-    public NodeResource(long node_id_p, long resource_id_p) {
-        this.node_id = node_id_p;
-        this.resource_id = resource_id_p;
+    public NodeResource(long node_id, long resource_id) {
+        this.id = new NodeResourceId(node_id, resource_id);
+    }
+
+    public long getNodeId() {
+        return id.getNodeId();
+    }
+
+    public long getResourceId() {
+        return id.getResourceId();
     }
 
     @Override
     public String toString() {
-        return String.format(
-            "NodeResource[nodeId=%d, resourceId=%d]",
-            node_id, resource_id
-        );
+        return String.format("NodeResource[NodeId=%d, resourceId=%d]", id.getNodeId(), id.getResourceId());
     }
-
-    public long getNodeId() {
-        return node_id;
-    }
-
-    public void setNodeId(long new_node_id) {
-        // INVALID - PRIMARY KEY
-
-    }
-
-    public long getResourceId() {
-        return resource_id;
-    }
-
-    public void setResourceId(long new_resource_id) {
-        // INVALID - PRIMARY KEY
-    }
-
-
 }
