@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/faqs")
-@CrossOrigin(origins = "http://localhost:3000")  // Allow frontend access
 public class FAQController {
 
     @Autowired private FaqService faqService;
