@@ -10,7 +10,7 @@ import java.util.List;
 public class CentralCommand {
 
     // Database connection constants
-    private static final String DB_URL = "jdbc:h2:file:./TestDataBase";
+    private static final String DB_URL = "jdbc:h2:file:../evictionEduspring/TestDataBase";
     private static final String DB_USER = "sa";
     private static final String DB_PASSWORD = "";
 
@@ -30,6 +30,7 @@ public class CentralCommand {
      * Tests the connection to the database by running a simple query.
      */
     public static boolean testConnection() {
+        System.out.println(System.getProperty("user.dir"));
         String testQuery = "SELECT 1";
 
         try {
