@@ -11,9 +11,6 @@ import static org.junit.Assert.*;
 
 public class AssertionSteps {
 
-    @Autowired
-    private CentralCommand CentralCommand;
-
     /**
      *
      * @param userid i.e. UserId = 1

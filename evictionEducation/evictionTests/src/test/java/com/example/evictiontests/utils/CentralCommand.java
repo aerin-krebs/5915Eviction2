@@ -10,25 +10,26 @@ import java.util.List;
 public class CentralCommand {
 
     // Database connection constants
-    private static final String DB_URL = "jdbc:h2:tcp://localhost:9092/~/yourdb";
+    private static final String DB_URL = "jdbc:h2:file:./TestDataBase";
     private static final String DB_USER = "sa";
     private static final String DB_PASSWORD = "";
 
-    private final DataSource dataSource;
+    // Static DataSource to be used by all methods
+    private static final DataSource dataSource;
 
-    // Constructor sets up the DataSource internally using constants
-    public CentralCommand() {
+    // Static block to initialize the DataSource
+    static {
         JdbcDataSource ds = new JdbcDataSource();
         ds.setURL(DB_URL);
         ds.setUser(DB_USER);
         ds.setPassword(DB_PASSWORD);
-        this.dataSource = ds;
+        dataSource = ds;
     }
 
     /**
      * Tests the connection to the database by running a simple query.
      */
-    public boolean testConnection() {
+    public static boolean testConnection() {
         String testQuery = "SELECT 1";
 
         try {
@@ -50,7 +51,7 @@ public class CentralCommand {
     /**
      * Executes a query with parameters.
      */
-    public List<List<Object>> executeQueryWithParameters(String sqlQuery, Object... params) {
+    public static List<List<Object>> executeQueryWithParameters(String sqlQuery, Object... params) {
         List<List<Object>> results = new ArrayList<>();
 
         try (Connection connection = dataSource.getConnection();
@@ -83,14 +84,14 @@ public class CentralCommand {
     /**
      * Executes a query without parameters.
      */
-    public List<List<Object>> executeQueryWithoutParameters(String sqlQuery) {
+    public static List<List<Object>> executeQueryWithoutParameters(String sqlQuery) {
         return executeQueryWithParameters(sqlQuery);
     }
 
     /**
      * Executes a query with exactly one parameter.
      */
-    public List<List<Object>> executeQueryWithOneParameter(String sqlQuery, Object param) {
+    public static List<List<Object>> executeQueryWithOneParameter(String sqlQuery, Object param) {
         return executeQueryWithParameters(sqlQuery, param);
     }
 }
