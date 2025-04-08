@@ -26,10 +26,10 @@ export default function Chat() {
         <div className={styles.container}>
             <Header />
             <div className={styles.contentBox}>
-                <p className={styles.title}>Need Legal Assistance?</p>
+                <p className={styles.title}>Need legal help?</p>
                 <p className={styles.text}>
-                    The Franklin County Municipal Court Self Help Resource Center provides free legal information.
-                    While staff cannot offer legal advice, they can assist you in understanding your options.
+                    The Franklin County Municipal Court Self Help Resource Center gives free legal information.
+                    They can’t give legal advice, but they can help you understand your options.
                 </p>
 
                 <Button
@@ -40,7 +40,7 @@ export default function Chat() {
                     Open Facebook Messenger Chat
                 </Button>
 
-                <p className={styles.title}>Other Ways to Get Help</p>
+                <p className={styles.title}>More ways to get help.</p>
                 <p className={styles.text}>
                     If you need more information, you can visit the Self Help Center in person at the Franklin County Municipal Court.
                     You may also find useful resources online.
