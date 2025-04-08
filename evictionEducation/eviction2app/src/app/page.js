@@ -42,8 +42,8 @@ export default function Home() {
       {legalAccepted && evictionPopupSeen && <EvictionPopup setEvictionPopupSeen={setEvictionPopupSeen} />}
 
       <div className={styles.contentBox}>
-        <p className={styles.title}>Are You Facing Eviction?</p>
-        <p className={styles.text}>Find the help you need today.</p>
+        <p className={styles.title}>Are you being evicted?</p>
+        <p className={styles.text}>We're here to help.</p>
         <Button
           component={Link}
           href="/decision-finder"
@@ -54,7 +54,8 @@ export default function Home() {
         </Button>
 
         <p className={styles.title}>Have legal questions?</p>
-        <p className={styles.text}>Chat with Franklin County Self Help Center. Staff cannot offer legal advice but can provide legal information.</p>
+        <p className={styles.text}>You can chat with the Franklin County Self Help Center.
+        They can’t give legal advice, but they can share helpful legal information.</p>
         <Button
           component={Link}
           href="/chat"
@@ -64,8 +65,8 @@ export default function Home() {
           Chat Now
         </Button>
 
-        <p className={styles.title}>View frequently asked questions</p>
-        <p className={styles.text}>Click below to see frequently asked questions by people experiencing eviction.</p>
+        <p className={styles.title}>View frequently asked questions.</p>
+        <p className={styles.text}>Click below to see common questions from people going through eviction.</p>
         <Button
           component={Link}
           href="/faq"
@@ -76,7 +77,7 @@ export default function Home() {
         </Button>
 
         <p className={styles.title}>Looking for resources?</p>
-        <p className={styles.text}>Click below to see our list of resources.</p>
+        <p className={styles.text}>Click below to find free services and local resources.</p>
         <Button
           component={Link}
           href="/resource-finder"
