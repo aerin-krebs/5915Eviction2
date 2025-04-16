@@ -9,6 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/features/FrontendFeatures",  //Path to your feature files
         glue = "com.example.evictiontests.stepdefinitions", // Package containing step definitions
+        tags = "@adhoc",
         plugin = {"pretty","html:target/cucumber-reports.html"}, //Report Generation
         monochrome = true // Makes Output Readable
 )

@@ -1,5 +1,6 @@
 package com.example.evictiontests.stepdefinitions;
 
+import com.example.evictiontests.constants.XPathConstants;
 import com.example.evictiontests.utils.TestHelper;
 import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,13 @@ public class AssertionSteps {
     @Then("I check that {string} is visible")
     public void iCheckThatIsVisible(String elementName) {
         assertTrue(TestHelper.getElementByName(elementName).isDisplayed());
+    }
+
+    @Then("I check that the legal disclaimer is visible")
+    public void iCheckThatTheLegalDisclaimerIsVisible() {
+        boolean check1 = TestHelper.getElementByXPath(XPathConstants.LEGAL_DISCLAIMER_POPUP).isDisplayed();
+        boolean check2 = TestHelper.getElementByXPath(XPathConstants.I_AGREE_BUTTON).isDisplayed();
+
+        assertTrue(check1 && check2);
     }
 }

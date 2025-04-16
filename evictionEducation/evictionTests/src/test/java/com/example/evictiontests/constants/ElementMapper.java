@@ -10,13 +10,18 @@ public class ElementMapper {
     static {
         elementMap.put("back button", XPathConstants.BACK_BUTTON);
 
+        elementMap.put("chat button", XPathConstants.CHAT_BUTTON);
         elementMap.put("chat now button", XPathConstants.CHAT_NOW_BUTTON);
         elementMap.put("congrats text", XPathConstants.CONGRATS_TEXT);
 
         elementMap.put("faqs button", XPathConstants.FAQS_BUTTON);
         elementMap.put("find a solution button", XPathConstants.FIND_A_SOLUTION_BUTTON);
 
+        elementMap.put("google translate dropdown", XPathConstants.GOOGLE_TRANSLATE_DROPDOWN);
+
         elementMap.put("i agree button", XPathConstants.I_AGREE_BUTTON);
+
+        elementMap.put("legal disclaimer popup", XPathConstants.LEGAL_DISCLAIMER_POPUP);
 
         elementMap.put("no button", XPathConstants.NO_BUTTON);
 

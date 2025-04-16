@@ -29,9 +29,17 @@ public class BasicSteps {
 
 
     @And("I wait {string} seconds")
-    public void iWaitSeconds(String seconds) throws InterruptedException {
-        new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(seconds)))
-                .until(webDriver -> ((JavascriptExecutor) webDriver)
-                        .executeScript("return document.readyState").equals("complete"));
+    public void iWaitSeconds(String secondsStr) throws InterruptedException {
+        try {
+            int seconds = Integer.parseInt(secondsStr);
+            System.out.println("⏳ Waiting " + seconds + " second(s)...");
+            Thread.sleep(seconds * 1000L);  // Convert to milliseconds
+            System.out.println("✅ Done waiting.");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.err.println("❌ Wait was interrupted");
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Invalid number for wait time: " + secondsStr);
+        }
     }
 }
