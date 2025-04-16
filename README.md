@@ -1,5 +1,5 @@
 # 5915Eviction2
-JusticeTech capstone project repository. Site can be accessed at https://eviction2.dranspo.se/
+JusticeTech capstone project repository. Site can be accessed at [https://eviction2.dranspo.se/](https://eviction2-osu.nrp-nautilus.io/faq)
 
 Technical [README](./docs/TechDetailsHome.md) and external documentation
 
