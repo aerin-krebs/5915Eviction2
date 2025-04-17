@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/tree")
-@CrossOrigin(origins = "http://localhost:3000")  // Allow frontend access
 public class DecisionTreeController {
 
     @Autowired private DecisionNodeService decisionNodeService;

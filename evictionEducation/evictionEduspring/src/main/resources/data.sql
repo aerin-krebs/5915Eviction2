@@ -10,7 +10,7 @@ INSERT INTO Users(user_id, fname, lname, user_type, email, address, hashed_passw
 
 
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (1, 'Legal Counsel', 'Legal Aid Society of Central Ohio', 'Offers legal aid, including for evictions, to those at or below 125% of the FPL.', 'https://www.lasco.org/', '2025-02-12', 7);
-INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (2, 'Chat', 'Chat and Resources', 'Link to messenger chat and general resources', 'https://www.google.com', '2025-02-12', 7);
+INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (2, 'Chat', 'Chat', 'Link to messenger chat and general resources page', '/chat', '2025-02-12', 7);
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (3, 'Rental Assistance', 'IMPACT Community Action', 'This agency will help if you end up in eviction. Aid is offered once a year. In some cases loans will be issued for rental payments', '(614) 252-2799', '2025-03-17', 7);
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (4, 'Rental Assistance', 'PRC (Prevention, Retention, and Contingency)', 'This program is for tenants who have children and live in Franklin County. They can help with both rent and energy bills', 'https://jfs.franklincountyohio.gov/emergency-assistance-(prc)', '2025-03-17', 7);
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (5, 'Rental Assistance', 'St. Vincent de Paul Society', 'They have linkage to emergency rental assistance programs. Also have other programs for food, emergency housing, clothing, and funeral funds.', '(614) 221-3554', '2025-03-17', 7);
@@ -26,6 +26,7 @@ INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (15, 'Fillable Form', 'Security Deposit Return Packet', '', 'https://irp.cdn-website.com/201ef22d/files/uploaded/Security_Deposit_Packet_-_LASCO_-_12.23.pdf', '2025-03-25', 1);
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (16, 'Fillable Form', 'Objection to the Magistrate’s Decision', '', 'https://municipalcourt.franklincountyohio.gov/Forms/Small-Claims/Objection.aspx', '2025-03-25', 1);
 INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (17, 'Fillable Form', 'Eviction Removal Packet', 'Eviction Removal Instructions with Credit Agency info', 'https://franklincountymunicourt.sharepoint.com/sites/SelfHelp/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSelfHelp%2FShared%20Documents%2FSelf%20Help%20Resource%20Center%2FHandouts%20for%20the%20Public%2FHousing%2FEviction%20Removal%20Packet&p=true&ga=1', '2025-03-25', 1);
+INSERT INTO Resources(resource_id, resource_category, title, summary, url, date_updated, creator) VALUES (18, 'Resources', 'Resources', 'Link to general resources', '/resource-finder', '2025-02-12', 7);
 
 
 INSERT INTO Decision_Node(node_id, is_leaf, display_type, question, node_language) VALUES (1, 0, 'Text', 'Do you have a 3 or 30 day notice?', 'English');
@@ -57,6 +58,7 @@ INSERT INTO FAQ(faq_id, question, answer) VALUES (5, 'Credit Agency Info for Evi
 
 INSERT INTO Node_Resource(node_id, resource_id) VALUES (5, 1);
 INSERT INTO Node_Resource(node_id, resource_id) VALUES (7, 2);
+INSERT INTO Node_Resource(node_id, resource_id) VALUES (8, 18);
 
 
 INSERT INTO FAQ_Resource(faq_id, resource_id) VALUES (1, 13);

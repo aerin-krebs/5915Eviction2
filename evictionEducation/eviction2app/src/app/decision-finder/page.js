@@ -12,7 +12,14 @@ const isPhoneNumber = (text) => {
     // Matches phone numbers like (614) 294-6347 or 614-294-6347 or 6142946347
     const phoneRegex = /^(\(\d{3}\)\s?|\d{3}[-.\s]?)\d{3}[-.\s]?\d{4}$/;
     return phoneRegex.test(text);
-  };
+};
+
+/** Helper function to detect internal pages */
+const isInternalPage = (text) => {
+    // Matches resources with values likle "/chat" or "/resource-finder"
+    const pageRegex = /^\/[a-zA-Z0-9-]+$/;
+    return pageRegex.test(text);
+};
 
 export default function DecisionFinder() {
     const [history, setHistory] = useState([1]); // Ensure Node 1 is always stored initially
@@ -139,6 +146,11 @@ export default function DecisionFinder() {
                                                 <a href={`tel:${resource.url}`} 
                                                     className={styles.link}>
                                                     📞 {resource.title || resource.url}
+                                                </a>
+                                            ) : isInternalPage(resource.url) ? (
+                                                <a href={resource.url} 
+                                                    className={styles.link}>
+                                                    🏠 {resource.title || resource.url}
                                                 </a>
                                             ) : (
                                                 <a href={resource.url} 
