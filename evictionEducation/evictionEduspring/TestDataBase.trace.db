@@ -1,6 +1,18 @@
-2025-02-25 17:16:24.545641-05:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
-select u1_0.user_id,u1_0.address,u1_0.email,u1_0.fname,u1_0.hashed_password,u1_0.lname,u1_0.user_type from users u1_0 [42102-232]
-2025-02-26 21:42:39.318912-05:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" already exists; SQL statement:
-CREATE TABLE Users ( user_id int NOT NULL, fname varchar(25), lname varchar(25), user_type varchar(10) NOT NULL, email varchar(50), address varchar(155), hashed_password varchar(100), PRIMARY KEY (user_id) ) [42101-232]
+2025-04-04 01:14:40.182297-04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ANSWER CHARACTER VARYING(255)": "'The first thing you need to do is post a notice to leave the premises (attached... (506)"; SQL statement:
+INSERT INTO "PUBLIC"."FAQ_COPY_3_6"("FAQ_ID", "QUESTION", "ANSWER") OVERRIDING SYSTEM VALUE SELECT "FAQ_ID", "QUESTION", "ANSWER" FROM "PUBLIC"."FAQ" [22001-232]
+2025-04-04 01:14:40.258764-04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "URL CHARACTER VARYING(255)": "'https://franklincountymunicourt.sharepoint.com/sites/SelfHelp/Shared%20Document... (262)"; SQL statement:
+INSERT INTO "PUBLIC"."RESOURCES_COPY_3_31"("RESOURCE_ID", "RESOURCE_CATEGORY", "TITLE", "SUMMARY", "URL", "DATE_UPDATED", "CREATOR") OVERRIDING SYSTEM VALUE SELECT "RESOURCE_ID", "RESOURCE_CATEGORY", "TITLE", "SUMMARY", "URL", "DATE_UPDATED", "CREATOR" FROM "PUBLIC"."RESOURCES" [22001-232]
+2025-04-04 01:15:05.632255-04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ANSWER CHARACTER VARYING(255)": "'The first thing you need to do is post a notice to leave the premises (attached... (506)"; SQL statement:
+INSERT INTO "PUBLIC"."FAQ_COPY_3_0"("FAQ_ID", "QUESTION", "ANSWER") OVERRIDING SYSTEM VALUE SELECT "FAQ_ID", "QUESTION", "ANSWER" FROM "PUBLIC"."FAQ" [22001-232]
+2025-04-04 01:15:05.656877-04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "URL CHARACTER VARYING(255)": "'https://franklincountymunicourt.sharepoint.com/sites/SelfHelp/Shared%20Document... (262)"; SQL statement:
+INSERT INTO "PUBLIC"."RESOURCES_COPY_3_1"("RESOURCE_ID", "RESOURCE_CATEGORY", "TITLE", "SUMMARY", "URL", "DATE_UPDATED", "CREATOR") OVERRIDING SYSTEM VALUE SELECT "RESOURCE_ID", "RESOURCE_CATEGORY", "TITLE", "SUMMARY", "URL", "DATE_UPDATED", "CREATOR" FROM "PUBLIC"."RESOURCES" [22001-232]
+2025-04-04 01:20:30.819895-04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ANSWER CHARACTER VARYING(255)": "'The first thing you need to do is post a notice to leave the premises (attached... (506)"; SQL statement:
+INSERT INTO "PUBLIC"."FAQ_COPY_3_0"("FAQ_ID", "QUESTION", "ANSWER") OVERRIDING SYSTEM VALUE SELECT "FAQ_ID", "QUESTION", "ANSWER" FROM "PUBLIC"."FAQ" [22001-232]
+2025-04-04 01:20:30.845358-04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "URL CHARACTER VARYING(255)": "'https://franklincountymunicourt.sharepoint.com/sites/SelfHelp/Shared%20Document... (262)"; SQL statement:
+INSERT INTO "PUBLIC"."RESOURCES_COPY_3_1"("RESOURCE_ID", "RESOURCE_CATEGORY", "TITLE", "SUMMARY", "URL", "DATE_UPDATED", "CREATOR") OVERRIDING SYSTEM VALUE SELECT "RESOURCE_ID", "RESOURCE_CATEGORY", "TITLE", "SUMMARY", "URL", "DATE_UPDATED", "CREATOR" FROM "PUBLIC"."RESOURCES" [22001-232]

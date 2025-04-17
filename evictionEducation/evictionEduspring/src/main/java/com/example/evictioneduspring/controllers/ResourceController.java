@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/resources")
-@CrossOrigin(origins = "http://localhost:3000")  // Allow frontend access
 public class ResourceController {
 
     @Autowired private ResourceService resourceService;

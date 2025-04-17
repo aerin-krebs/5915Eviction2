@@ -22,6 +22,13 @@ export default function ResourceFinder() {
         return phoneRegex.test(text);
     };
 
+    /** Helper function to detect internal pages */
+    const isInternalPage = (text) => {
+        // Matches resources with values likle "/chat" or "/resource-finder"
+        const pageRegex = /^\/[a-zA-Z0-9-]+$/;
+        return pageRegex.test(text);
+    };
+
     useEffect(() => {
         const fetchResources = async () => {
             try {
@@ -48,11 +55,11 @@ export default function ResourceFinder() {
         }, 300);
     };
 
-    // Filtered resources based on search term and category filter
     const filteredResources = resources.filter((resource) => {
         return (
             resource.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-            (filter === 'All' || resource.resourceCategory === filter)
+            (filter === 'All' || resource.resourceCategory === filter) &&
+            !isInternalPage(resource.url) // Exclude internal pages
         );
     });
 
@@ -85,7 +92,6 @@ export default function ResourceFinder() {
                     <option value="Adult & Family Crisis Support">Adult & Family Crisis Support</option>
                     <option value="Legal Counsel">Legal Counsel</option>
                     <option value="Rental Assistance">Rental Assistance</option>
-                    <option value="Chat">Chat</option>
                     <option value="Fillable Form">Fillable Form</option>
                 </select>
 
