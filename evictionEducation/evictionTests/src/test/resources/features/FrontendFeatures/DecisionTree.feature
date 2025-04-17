@@ -18,7 +18,7 @@ Feature: Legal Disclaimer
     And I click on "yes button"
     Then I check that "legal aid society button" is visible
 
-  Scenario: I navigate to additional resources
+  Scenario: I navigate to additional resources page
     And I click on "three day notice button"
     And I click on "no button"
     And I click on "yes button"
