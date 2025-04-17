@@ -1,16 +1,22 @@
 package com.example.evictiontests.stepdefinitions;
 
+import com.example.evictiontests.constants.TestContext;
 import com.example.evictiontests.constants.XPathConstants;
 import com.example.evictiontests.utils.TestHelper;
 import io.cucumber.java.en.Then;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.example.evictiontests.utils.CentralCommand;
+
+import java.net.http.*;
 
 import java.util.List;
 import static org.junit.Assert.*;
 
 
 public class AssertionSteps {
+
+
+    public AssertionSteps() {
+    }
 
     /**
      *
@@ -39,5 +45,10 @@ public class AssertionSteps {
         boolean check2 = TestHelper.getElementByXPath(XPathConstants.I_AGREE_BUTTON).isDisplayed();
 
         assertTrue(check1 && check2);
+    }
+
+    @Then("I check that the response status is {int}")
+    public void iCheckTheResponseStatusShouldBe(Integer expectedStatus) {
+        assertEquals((int) expectedStatus, TestContext.get("apiResponse", HttpResponse.class).statusCode());
     }
 }

@@ -15,6 +15,7 @@ public class XPathConstants {
 
     public static final String I_AGREE_BUTTON = "//button[contains(text(), 'I agree')]";
 
+    public static final String LEGAL_AID_SOCIETY_BUTTON = "//a[contains(., 'Legal Aid Society of Central Ohio')]";
     public static final String LEGAL_DISCLAIMER_POPUP = "//div[contains(@class, 'LegalDisclaimer')]";
 
     public static final String NO_BUTTON = "//button[contains(text(), 'No')]";
@@ -24,8 +25,8 @@ public class XPathConstants {
 
     public static final String RESOURCES_BUTTON = "//a[contains(text(), 'Resources')]";
 
-    public static final String THIRTY_DAY_NOTICE_BUTTON = "//button[contains(text(), '30 Day Notice')]";
-    public static final String THREE_DAY_NOTICE_BUTTON = "//button[contains(text(), '3 Day Notice')]";
+    public static final String THIRTY_DAY_NOTICE_BUTTON = "//button[contains(text(), '30 Day')]";
+    public static final String THREE_DAY_NOTICE_BUTTON = "//button[contains(text(), '3 Day')]";
 
     public static final String YES_BUTTON = "//button[contains(text(), 'Yes')]";
 

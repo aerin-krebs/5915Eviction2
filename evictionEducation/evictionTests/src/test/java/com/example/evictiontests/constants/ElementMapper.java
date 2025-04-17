@@ -21,6 +21,7 @@ public class ElementMapper {
 
         elementMap.put("i agree button", XPathConstants.I_AGREE_BUTTON);
 
+        elementMap.put("legal aid society button", XPathConstants.LEGAL_AID_SOCIETY_BUTTON);
         elementMap.put("legal disclaimer popup", XPathConstants.LEGAL_DISCLAIMER_POPUP);
 
         elementMap.put("no button", XPathConstants.NO_BUTTON);
