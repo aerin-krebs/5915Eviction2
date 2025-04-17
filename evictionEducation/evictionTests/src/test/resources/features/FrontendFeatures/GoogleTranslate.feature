@@ -1,5 +1,5 @@
 @setUp @tearDown
-Feature: Legal Disclaimer
+Feature: Google Translate
 
   Background:
     And I go to the link "http://localhost:3000"
