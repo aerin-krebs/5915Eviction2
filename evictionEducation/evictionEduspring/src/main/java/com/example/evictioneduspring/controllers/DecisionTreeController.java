@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "https://eviction2-osu.nrp-nautilus.io/decision-finder")
 @RequestMapping("/api/tree")
 public class DecisionTreeController {
 

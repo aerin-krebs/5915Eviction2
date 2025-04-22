@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "https://eviction2-osu.nrp-nautilus.io/resource-finder")
 @RequestMapping("/api/resources")
 public class ResourceController {
 
